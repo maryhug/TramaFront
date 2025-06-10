@@ -2,7 +2,7 @@
 
 export function TabNavigation({ tabs, activeTab, onTabChange }) {
     return (
-        <div className="flex space-x-8 border-b border-gray-700">
+        <div className="bg-gray-900 flex space-x-8 border-b border-gray-700">
             {tabs.map((tab) => (
                 <button
                     key={tab.id}

@@ -2,10 +2,11 @@ import React from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import DescubrirPage from "./pages/Discover"
 import HomePage from "./pages/Home"
-import Header from "./components/Header/Header"
 import MyListsPage from "./pages/My-List"
 import Buscar from "./pages/Movies"
 import Review from "./pages/Review"
+import Profile from "./pages/Profile"
+import Layout from "./components/layout/Layout"
 
 function App() {
     return (
@@ -15,44 +16,56 @@ function App() {
                     <Route
                         path="/"
                         element={
-                            <>
-                                <Header activeNavItem="home" />
+                            <Layout activeNavItem="home">
                                 <HomePage />
-                            </>
+                            </Layout>
                         }
                     />
+
                     <Route
                         path="/descubrir"
                         element={
-                            <>
-                                <Header activeNavItem="discover" />
+                            <Layout activeNavItem="discover">
                                 <DescubrirPage />
-                            </>
+                            </Layout>
                         }
                     />
-                    {/* Puedes agregar otras rutas similares: */}
 
-                    <Route path="/mis-listas" element={
-                        <>
-                            <Header activeNavItem="lists" />
-                            <MyListsPage />
-                        </>
-                    } />
+                    <Route
+                        path="/mis-listas"
+                        element={
+                            <Layout activeNavItem="lists">
+                                <MyListsPage />
+                            </Layout>
+                        }
+                    />
 
-                    <Route path="/buscar" element={
-                        <>
-                            <Header activeNavItem="lists" />
-                            <Buscar />
-                        </>
-                    } />
+                    <Route
+                        path="/buscar"
+                        element={
+                            <Layout activeNavItem="lists">
+                                <Buscar />
+                            </Layout>
+                        }
+                    />
 
-                    <Route path="/review" element={
-                        <>
-                            <Header activeNavItem="lists" />
-                            <Review />
-                        </>
-                    } />
+                    <Route
+                        path="/review"
+                        element={
+                            <Layout activeNavItem="lists">
+                                <Review />
+                            </Layout>
+                        }
+                    />
 
+                    <Route
+                        path="/profile"
+                        element={
+                            <Layout activeNavItem="lists">
+                                <Profile />
+                            </Layout>
+                        }
+                    />
                 </Routes>
             </div>
         </Router>

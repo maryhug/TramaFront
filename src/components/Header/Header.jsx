@@ -82,10 +82,6 @@ const Header = () => {
                         >
                             Buscar
                         </NavLink>
-
-
-
-
                     </div>
                 </nav>
 

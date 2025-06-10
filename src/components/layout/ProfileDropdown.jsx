@@ -2,10 +2,14 @@
 
 import { DropdownMenu, DropdownMenuItem } from "./DropdownMenu"
 import { UserIcon, SettingsIcon, LogOutIcon } from "../icons/Icons"
+import { useNavigate } from "react-router-dom"
+
 
 export function ProfileDropdown({ user }) {
+    const navigate = useNavigate()
+
     const handleProfileClick = () => {
-        console.log("Navigate to profile")
+        navigate("/profile")
     }
 
     const handleSettingsClick = () => {
