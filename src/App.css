@@ -36,12 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-@layer components {
-  .no-scrollbar {
-    scrollbar-width: none;
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-}

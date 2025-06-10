@@ -42,29 +42,6 @@ const DiscoverSection = () => {
         },
     ];
 
-    const featuredLists = [
-        {
-            title: "Top 10 Sci-Fi of the Decade",
-            image: "https://images.unsplash.com/photo-1609838468420-8f96d2d3b089",
-            user: "Alex Stone"
-        },
-        {
-            title: "Best Horror Classics",
-            image: "https://images.unsplash.com/photo-1558980394-0f2d7f6e18c2",
-            user: "Jamie Lee"
-        },
-        {
-            title: "Underrated Gems",
-            image: "https://images.unsplash.com/photo-1542204165-19b33620f7a0",
-            user: "Casey Wells"
-        },
-        {
-            title: "Oscar Winners 2000–2020",
-            image: "https://images.unsplash.com/photo-1517638851339-4aa32003c11a",
-            user: "Morgan Finch"
-        }
-    ];
-
     return (
         <div className="min-h-screen bg-[#101a23] font-[\'Plus Jakarta Sans\'] text-white">
             <div className="flex flex-col px-10 py-5 max-w-7xl mx-auto">
@@ -77,7 +54,7 @@ const DiscoverSection = () => {
                             <div key={i} className="min-w-40 flex flex-col gap-4">
                                 <div
                                     className="aspect-[3/4] bg-cover bg-center rounded-xl"
-                                    style={{ backgroundImage: `url(${release.image})` }}
+                                    style={{backgroundImage: `url(${release.image})`}}
                                 ></div>
                                 <p className="text-base font-medium">{release.title}</p>
                             </div>
@@ -92,28 +69,13 @@ const DiscoverSection = () => {
                             <div key={i} className="min-w-32 text-center flex flex-col gap-4">
                                 <div
                                     className="aspect-square w-full bg-cover bg-center rounded-full mx-auto"
-                                    style={{ backgroundImage: `url(${user.image})` }}
+                                    style={{backgroundImage: `url(${user.image})`}}
                                 ></div>
                                 <p className="text-base font-medium">{user.name}</p>
                             </div>
                         ))}
                     </div>
                 </section>
-
-                <section className="pt-4">
-                    <h3 className="text-lg font-bold pb-2">Featured Lists</h3>
-                    <div className="flex overflow-x-auto gap-3 py-4 no-scrollbar">
-                        {featuredLists.map((list, idx) => (
-                            <FeaturedListCard
-                                key={idx}
-                                title={list.title}
-                                image={list.image}
-                                user={list.user}
-                            />
-                        ))}
-                    </div>
-                </section>
-
 
             </div>
         </div>
