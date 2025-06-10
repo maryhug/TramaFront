@@ -1,4 +1,3 @@
-import { Sidebar } from "../components/layout/Sidebar"
 import { RightSidebar } from "../components/layout/RightSidebar"
 import { CreatePost } from "../components/feed/CreatePost"
 import { ContentFilters } from "../components/feed/ContentFilters"
@@ -42,10 +41,9 @@ export default function Home() {
     ]
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-900">
 
             <div className="flex max-w-7xl mx-auto">
-                <Sidebar />
 
                 {/* Main Content */}
                 <main className="flex-1 p-6">

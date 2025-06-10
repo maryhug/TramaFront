@@ -1,4 +1,4 @@
-import { MoviePoster } from "../ui/movie-poster"
+import { MoviePoster } from "../ui/MoviePoster"
 
 export function MovieItem({ movie }) {
     return (

@@ -1,6 +1,6 @@
 "use client"
 
-import { ListItem } from "./list-item"
+import { ListItem } from "./ListItem"
 
 export function ListsGrid({ lists, onListClick }) {
     return (

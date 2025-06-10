@@ -31,7 +31,7 @@ my-react-tailwind-project/
 │   ├── assets/                 # Imágenes, fuentes, íconos, etc.
 │   ├── components/             # Componentes React reutilizables
 │   │   ├── Button.jsx
-│   │   ├── Header.jsx
+│   │   ├── header.jsx
 │   │   └── ...
 │   ├── pages/                  # Vistas o páginas (si usas React Router)
 │   │   ├── Home.jsx

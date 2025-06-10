@@ -43,12 +43,13 @@ const DiscoverSection = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#101a23] font-[\'Plus Jakarta Sans\'] text-white">
+        <div className="min-h-screen bg-gray-900 font-semibold text-white">
+
             <div className="flex flex-col px-10 py-5 max-w-7xl mx-auto">
-                <h2 className="text-[28px] font-bold pb-3 pt-5">Discover</h2>
+                <h2 className="text-[28px] font-semibold pb-3 pt-5">Discover</h2>
 
                 <section className="pt-4">
-                    <h3 className="text-lg font-bold pb-2">New Releases</h3>
+                    <h3 className="text-lg font-semibold pb-2">New Releases</h3>
                     <div className="flex overflow-x-auto gap-3 py-4 no-scrollbar">
                         {releases.map((release, i) => (
                             <div key={i} className="min-w-40 flex flex-col gap-4">
@@ -63,7 +64,7 @@ const DiscoverSection = () => {
                 </section>
 
                 <section className="pt-4">
-                    <h3 className="text-lg font-bold pb-2">Popular Users</h3>
+                    <h3 className="text-lg font-semibold pb-2">Popular Users</h3>
                     <div className="flex overflow-x-auto gap-8 py-4 no-scrollbar">
                         {users.map((user, i) => (
                             <div key={i} className="min-w-32 text-center flex flex-col gap-4">

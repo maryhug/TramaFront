@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { SearchSection } from "../components/layout/search-section"
-import { ContentTabs } from "../components/layout/content-tabs"
-import { MovieList } from "../components/feed/movie-list"
+import { SearchSection } from "../components/layout/SearchSection"
+import { ContentTabs } from "../components/layout/ContentTabs"
+import { MovieList } from "../components/feed/MovieList"
 import { useMovieSearch } from "../hooks/use-movie-search"
 
 export default function SearchPage() {

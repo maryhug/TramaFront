@@ -1,4 +1,4 @@
-import { MovieItem } from "./movie-item"
+import { MovieItem } from "./MovieItem"
 
 export function MovieList({ movies, title }) {
     return (

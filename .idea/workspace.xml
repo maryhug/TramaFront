@@ -5,24 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43794c30-1668-4572-8191-9081c1dbeff2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/feed/list-item.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/lists-grid.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/movie-item.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/movie-list.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/content-tabs.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/layout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/search-section.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/tab-navigation.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/icons.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/movie-poster.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/search-bar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/tab-navigation.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-lists.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-movie-search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/DropdownMenu.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/ProfileDropdown.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/list-item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ListItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/lists-grid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ListsGrid.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/movie-item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MovieItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/movie-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MovieList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Header.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/content-tabs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/ContentTabs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/search-section.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/SearchSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/tab-navigation.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/icons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/Icons.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/movie-poster.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MoviePoster.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/search-bar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/SearchBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/tab-navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/TabNavigation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-lists.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-lists.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Discover.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Discover.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Movies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Movies.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/My-List.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/My-List.jsx" afterDir="false" />
     </list>
@@ -74,6 +78,14 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maryh\IdeaProjects\tramafront\src\components\Header" />
+      <recent name="C:\Users\maryh\IdeaProjects\tramafront\src\components\icons" />
+      <recent name="C:\Users\maryh\IdeaProjects\tramafront\src\components\ui" />
+      <recent name="C:\Users\maryh\IdeaProjects\tramafront\src\components" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -92,7 +104,7 @@
       <updated>1749513136708</updated>
       <workItem from="1749513138857" duration="1781000" />
       <workItem from="1749519490972" duration="11892000" />
-      <workItem from="1749569353949" duration="2654000" />
+      <workItem from="1749569353949" duration="9465000" />
     </task>
     <servers />
   </component>

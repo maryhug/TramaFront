@@ -1,6 +1,6 @@
 "use client"
 
-import { SearchBar } from "../ui/search-bar"
+import { SearchBar } from "../ui/SearchBar"
 
 export function SearchSection({ searchQuery, onSearchChange, onSearchClear }) {
     return (

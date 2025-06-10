@@ -12,7 +12,7 @@ import {
     FileTextIcon,
     PlayIcon,
     MasksIcon,
-} from "../components/ui/icons"
+} from "../components/icons/Icons"
 
 export function useLists() {
     const [lists] = useState([

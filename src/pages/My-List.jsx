@@ -1,9 +1,8 @@
 "use client"
 
 import { useState } from "react"
-//import { PageHeader } from "../components/page-header"
-import { TabNavigation } from "../components/layout/tab-navigation"
-import { ListsGrid } from "../components/feed/lists-grid"
+import { TabNavigation } from "../components/Header/TabNavigation"
+import { ListsGrid } from "../components/feed/ListsGrid"
 import { useLists } from "../hooks/use-lists"
 
 const tabs = [
@@ -30,8 +29,6 @@ export default function MyListsPage() {
     return (
         <div className="min-h-screen bg-gray-900">
             <div className="max-w-4xl mx-auto px-6 py-8">
-                {/*<PageHeader title="My Lists" />*/}
-
                 <div className="mb-8">
                     <TabNavigation tabs={tabs} activeTab={activeTab} onTabChange={handleTabChange} />
                 </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { TabNavigation } from "../ui/tab-navigation"
+import { TabNavigation } from "../Header/TabNavigation"
 
 const tabs = [
     { id: "top", label: "Top" },
