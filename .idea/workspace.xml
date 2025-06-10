@@ -5,9 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43794c30-1668-4572-8191-9081c1dbeff2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Movies.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/My-List.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Profile.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Review.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Settings.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Suggestions.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/BusqPeliculas.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Discover.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Busquedas.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Calificaciones.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Confi.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Descubrir.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MisListas.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/PagPrincipal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Perfil.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,28 +36,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "maryhug"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;maryhug&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/maryhug/TramaFront.git",
-    "accountId": "7b0d8ccc-46ff-441d-aa50-4b89be6ed26c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/maryhug/TramaFront.git&quot;,
+    &quot;accountId&quot;: &quot;7b0d8ccc-46ff-441d-aa50-4b89be6ed26c&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2yIDLNcQoftNfAfrsLAeg33S6m3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.Busquedas.jsx.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
@@ -49,6 +72,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -68,7 +92,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1749513136708</updated>
-      <workItem from="1749513138857" duration="653000" />
+      <workItem from="1749513138857" duration="1781000" />
+      <workItem from="1749519490972" duration="5837000" />
     </task>
     <servers />
   </component>
