@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import DescubrirPage from "./pages/Discover"
 import HomePage from "./pages/Home"
 import Header from "./components/Header/Header"
-import MyListsPage from "./pages/My-List";
+import MyListsPage from "./pages/My-List"
 import Buscar from "./pages/Movies"
+import Review from "./pages/Review"
 
 function App() {
     return (
@@ -44,6 +45,14 @@ function App() {
                             <Buscar />
                         </>
                     } />
+
+                    <Route path="/review" element={
+                        <>
+                            <Header activeNavItem="lists" />
+                            <Review />
+                        </>
+                    } />
+
                 </Routes>
             </div>
         </Router>

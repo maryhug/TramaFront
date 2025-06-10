@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43794c30-1668-4572-8191-9081c1dbeff2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/feed/MovieFeed.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/ReviewItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/rating-overview.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/reviews-list.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/breadcrumb.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/pagination.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/progress-bar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/star-rating.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-reviews.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/feed/MovieItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MovieItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/MovieList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MovieList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/MoviePost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MoviePost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/ReviewItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ReviewItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/reviews-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/reviews-list.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icons/Icons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/Icons.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/ContentTabs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/ContentTabs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/RightSidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/RightSidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Avatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Avatar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/SearchInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/SearchInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/StarRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/StarRating.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/star-rating.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Review.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +97,7 @@
       <updated>1749513136708</updated>
       <workItem from="1749513138857" duration="1781000" />
       <workItem from="1749519490972" duration="11892000" />
-      <workItem from="1749569353949" duration="12039000" />
+      <workItem from="1749569353949" duration="15933000" />
     </task>
     <servers />
   </component>

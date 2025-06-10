@@ -1,13 +1,12 @@
-import { MovieItem } from "./MovieItem"
-
-export function MovieList({ movies, title }) {
+export function MovieItem({ movie }) {
     return (
-        <div className="space-y-0">
-            {title && <h2 className="text-xl font-semibold text-white mb-6">{title}</h2>}
-            <div className="divide-y divide-gray-800">
-                {movies.map((movie) => (
-                    <MovieItem key={movie.id} movie={movie} />
-                ))}
+        <div className="flex items-center justify-between py-6 border-b border-gray-800 last:border-b-0">
+            <div className="flex-1">
+                <div className="text-gray-400 text-sm mb-1">{movie.year}</div>
+                <h3 className="text-white text-lg font-medium mb-1">{movie.title}</h3>
+                <div className="text-gray-400 text-sm">
+                    {movie.genre} • {movie.duration}
+                </div>
             </div>
         </div>
     )

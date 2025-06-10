@@ -8,7 +8,7 @@ import { useReviews } from "../hooks/use-reviews"
 
 const breadcrumbItems = [{ label: "Movies", href: "/movies" }, { label: "Review" }]
 
-export default function ReviewPage() {
+export default function Review() {
     const { reviews, ratingData, currentPage, totalPages, setCurrentPage } = useReviews()
 
     return (

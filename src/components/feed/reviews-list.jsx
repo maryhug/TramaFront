@@ -1,4 +1,4 @@
-import { ReviewItem } from "./review-item"
+import { ReviewItem } from "./ReviewItem"
 
 export function ReviewsList({ reviews }) {
     return (

@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { StarRating } from "../ui/star-rating"
-import { ThumbsUpIcon, ThumbsDownIcon } from "../ui/icons"
+import { StarRating } from "../ui/StarRating"
+import { ThumbsUpIcon, ThumbsDownIcon } from "../icons/Icons"
 
 export function ReviewItem({ review }) {
     const [likes, setLikes] = useState(review.likes)

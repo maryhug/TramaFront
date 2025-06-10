@@ -1,4 +1,4 @@
-import { StarRating } from "../ui/star-rating"
+import { StarRating } from "../ui/StarRating"
 import { ProgressBar } from "../ui/progress-bar"
 
 export function RatingOverview({ averageRating, totalReviews, ratingDistribution }) {

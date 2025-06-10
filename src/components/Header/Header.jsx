@@ -83,16 +83,7 @@ const Header = () => {
                             Buscar
                         </NavLink>
 
-                        <NavLink
-                            to="/reviwe"
-                            className={({ isActive }) =>
-                            `text-white text-[15px] font-semibold pb-1 transition-all ${
-                                isActive ? "border-b-2 border-white" : "hover:border-b-2 hover:border-white"
-                            }`
-                        }
-                            >
-                            Review
-                    </NavLink>
+
 
 
                     </div>
