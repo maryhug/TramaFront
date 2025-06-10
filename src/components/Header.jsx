@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaPlus, FaCommentDots, FaBell } from "react-icons/fa";
-import logo from "../assets/Logo.svg";  
+import logo from "../assets/Logo.svg";
 import { FiChevronDown } from "react-icons/fi";
 
 export default function Header() {
@@ -8,22 +8,23 @@ export default function Header() {
 
   return (
     <header className="w-full bg-white border-b shadow-sm px-4 py-2 flex items-center justify-between">
-      {/* Logo */}
+      {
+        /* Logo */
         <div className="flex items-center space-x-2">
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-8 w-auto"
-          />
+          <img src={logo} alt="Logo" className="h-8 w-auto" />
           <div className="text-2xl font-bold">TRAMA</div>
         </div>
+      }
 
-      {/* CREAR PUBLICACIÓN */}
-      <div className="flex items-center space-x-1 text-gray-800 hover:text-black cursor-pointer">
-        <FaPlus className="text-balck-500 text-xl hover:text-blue-400 rotate-0 " />
-        <span className="text-sm font-medium">Crear Publicación</span>
-        <FiChevronDown className="text-sm" />
-      </div>
+      {
+        /* CREAR PUBLICACIÓN */
+        <div className="flex items-center space-x-1 text-gray-800 hover:text-black cursor-pointer">
+          <FaPlus className="text-balck-500 text-xl hover:text-blue-400 rotate-0 " />
+          <span className="text-sm font-medium">Crear Publicación</span>
+          <FiChevronDown className="text-sm" />
+                
+        </div>
+      }
 
       {/* BARRA DE BÚSQUEDA */}
       <div className="flex-1 mx-40">
