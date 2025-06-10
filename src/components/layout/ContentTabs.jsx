@@ -1,5 +1,4 @@
 "use client"
-
 import { TabNavigation } from "../Header/TabNavigation"
 
 const tabs = [
