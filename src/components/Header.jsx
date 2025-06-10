@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MagnifyingGlassIcon = () => (
     <svg
@@ -15,7 +16,7 @@ const MagnifyingGlassIcon = () => (
 
 const Header = () => {
   return (
-      <header className="flex items-center justify-between whitespace-nowrap border-b border-b-[#223649] bg-[#0f1c2e] px-10 py-3">
+      <header className="flex items-center justify-between whitespace-nowrap border-b border-b-[#223649] bg-[#0f1c2e] px-10 py-2">
         <div className="flex items-center gap-8">
           <div className="flex items-center gap-1 text-white">
             <a href="https://postimg.cc/gw828S5K" target="_blank" rel="noopener noreferrer">
@@ -33,17 +34,17 @@ const Header = () => {
               />
             </a>
           </div>
-          <nav className="flex items-center gap-9">
-            {["Home", "Descubrir", "Mis Listas"].map((item) => (
-                <a
-                    key={item}
-                    href="#"
-                    className="text-white text-sm font-medium font-playfair"
-                >
-                  {item}
-                </a>
-            ))}
-          </nav>
+            <nav className="flex items-center gap-9">
+                <Link to="/" className="text-white text-sm font-medium font-playfair">
+                    Home
+                </Link>
+                <Link to="/descubrir" className="text-white text-sm font-medium font-playfair">
+                    Descubrir
+                </Link>
+                <Link to="/mis-listas" className="text-white text-sm font-medium font-playfair">
+                    Mis Listas
+                </Link>
+            </nav>
         </div>
         <div className="flex flex-1 justify-end gap-8">
           <label className="flex flex-col min-w-40 h-10 max-w-64">
