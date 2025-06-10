@@ -44,21 +44,11 @@ const Header = () => {
                 <Link to="/mis-listas" className="text-white text-sm font-medium font-playfair">
                     Mis Listas
                 </Link>
+                <Link to="/buscar" className="text-white text-sm font-medium font-playfair">
+                    Buscar
+                </Link>
             </nav>
         </div>
-        <div className="flex flex-1 justify-end gap-8">
-          <label className="flex flex-col min-w-40 h-10 max-w-64">
-            <div className="flex w-full items-center rounded-xl bg-[#223649] h-full">
-              <div className="text-[#90aecb] flex items-center justify-center pl-4">
-                <MagnifyingGlassIcon />
-              </div>
-              <input
-                  type="text"
-                  placeholder="Search"
-                  className="flex-1 bg-[#223649] text-white border-none focus:outline-none placeholder:text-[#90aecb] px-2 font-playfair"
-              />
-            </div>
-          </label>
           <div
               className="bg-center bg-no-repeat bg-cover rounded-full w-10 h-10"
               style={{
@@ -66,7 +56,6 @@ const Header = () => {
                     "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAayfI3oFaUAbHybyULX2713_sI1-UTAGhwp9qYaE6bVlSDkxAS4aW7SF9DuHtkW8XGEbVHvQJL7QnAu25tnZHlOw1sSoQLWmJXfS3NdiWJeATSG_oJIO4JSSDnnkdyFotzcrCXqz9mIOZjjpN5gsbahIuMviWsMjhauuOWqruGAoRbdXOlFvira2NRtN-ntWtzt9QqrLzsQo5kmHUY7ZpSmDqoL5MfFfriYcJgcdyuUAGBJ8aIRBNHzkpwU7dQV6F-u5shoJe6lUd7')"
               }}
           ></div>
-        </div>
       </header>
   );
 };

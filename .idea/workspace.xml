@@ -5,23 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43794c30-1668-4572-8191-9081c1dbeff2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/feed/ContentFilters.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/CreatePost.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/MoviePost.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/RightSidebar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/Sidebar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/Avatar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/Button.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/SearchInput.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/StarRating.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/list-item.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/lists-grid.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/movie-item.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/movie-list.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/content-tabs.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/layout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/search-section.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/tab-navigation.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/icons.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/movie-poster.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/search-bar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/tab-navigation.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/use-lists.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/use-movie-search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Movies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Movies.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/My-List.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/My-List.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,23 +57,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.Busquedas.jsx.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/maryh/IdeaProjects/tramafront",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.Busquedas.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/maryh/IdeaProjects/tramafront&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -88,7 +91,8 @@
       <option name="presentableId" value="Default" />
       <updated>1749513136708</updated>
       <workItem from="1749513138857" duration="1781000" />
-      <workItem from="1749519490972" duration="11635000" />
+      <workItem from="1749519490972" duration="11892000" />
+      <workItem from="1749569353949" duration="2654000" />
     </task>
     <servers />
   </component>
