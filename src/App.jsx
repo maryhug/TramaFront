@@ -1,6 +1,6 @@
 // src/App.jsx
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import React, {useState, useEffect} from "react";
+import {BrowserRouter as Router, Routes, Route, useNavigate} from "react-router-dom";
 import DescubrirPage from "./pages/Discover";
 import HomePage from "./pages/Home";
 import MyListsPage from "./pages/My-List";
@@ -10,8 +10,9 @@ import Profile from "./pages/Profile";
 import Layout from "./components/layout/Layout";
 import Settings from "./pages/Settings";
 import CommentsPage from "./pages/Comentarios";
-import { MoviePost } from "./components/feed/MoviePost";
-import { ReviewCard } from "./components/feed/ReviewCard";
+import Movies from "./pages/Movies"
+import MovieDetailsPage from "./pages/Movie"
+import {ReviewCard} from "./components/feed/ReviewCard";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import authService from "./services/authService";
@@ -34,20 +35,20 @@ function AppContent() {
     };
 
     if (loadingUser) {
-        return <div style={{ color: "white", textAlign: "center", marginTop: 40 }}>Cargando...</div>;
+        return <div style={{color: "white", textAlign: "center", marginTop: 40}}>Cargando...</div>;
     }
 
     return (
         <div className="App">
             <Routes>
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/login" element={<LoginPage/>}/>
+                <Route path="/register" element={<RegisterPage/>}/>
 
                 <Route
                     path="/"
                     element={
                         <Layout activeNavItem="home" currentUser={currentUser} onLogout={handleLogout}>
-                            <HomePage />
+                            <HomePage/>
                         </Layout>
                     }
                 />
@@ -55,7 +56,7 @@ function AppContent() {
                     path="/descubrir"
                     element={
                         <Layout activeNavItem="discover" currentUser={currentUser} onLogout={handleLogout}>
-                            <DescubrirPage />
+                            <DescubrirPage/>
                         </Layout>
                     }
                 />
@@ -63,7 +64,7 @@ function AppContent() {
                     path="/mis-listas"
                     element={
                         <Layout activeNavItem="lists" currentUser={currentUser} onLogout={handleLogout}>
-                            <MyListsPage />
+                            <MyListsPage/>
                         </Layout>
                     }
                 />
@@ -71,7 +72,7 @@ function AppContent() {
                     path="/buscar"
                     element={
                         <Layout activeNavItem="lists" currentUser={currentUser} onLogout={handleLogout}>
-                            <Buscar />
+                            <Buscar/>
                         </Layout>
                     }
                 />
@@ -79,7 +80,7 @@ function AppContent() {
                     path="/review"
                     element={
                         <Layout activeNavItem="lists" currentUser={currentUser} onLogout={handleLogout}>
-                            <Review />
+                            <Review/>
                         </Layout>
                     }
                 />
@@ -89,10 +90,10 @@ function AppContent() {
                     element={
                         currentUser ? (
                             <Layout activeNavItem="profile" currentUser={currentUser} onLogout={handleLogout}>
-                                <Profile currentUser={currentUser} />
+                                <Profile currentUser={currentUser}/>
                             </Layout>
                         ) : (
-                            <LoginPage />
+                            <LoginPage/>
                         )
                     }
                 />
@@ -101,10 +102,10 @@ function AppContent() {
                     element={
                         currentUser ? (
                             <Layout activeNavItem="profile" currentUser={currentUser} onLogout={handleLogout}>
-                                <Profile currentUser={currentUser} />
+                                <Profile currentUser={currentUser}/>
                             </Layout>
                         ) : (
-                            <LoginPage />
+                            <LoginPage/>
                         )
                     }
                 />
@@ -113,10 +114,10 @@ function AppContent() {
                     element={
                         currentUser ? (
                             <Layout activeNavItem="settings" currentUser={currentUser} onLogout={handleLogout}>
-                                <Settings />
+                                <Settings/>
                             </Layout>
                         ) : (
-                            <LoginPage />
+                            <LoginPage/>
                         )
                     }
                 />
@@ -124,7 +125,7 @@ function AppContent() {
                     path="/comments"
                     element={
                         <Layout activeNavItem="comments" currentUser={currentUser} onLogout={handleLogout}>
-                            <CommentsPage />
+                            <CommentsPage/>
                         </Layout>
                     }
                 />
@@ -132,12 +133,18 @@ function AppContent() {
                     path="/ReviewCard"
                     element={
                         <Layout activeNavItem="ReviewCard" currentUser={currentUser} onLogout={handleLogout}>
-                            <ReviewCard />
+                            <ReviewCard/>
                         </Layout>
                     }
                 />
+
+                <Route path="/movies" element={<Movies/>}/>
+                <Route path="/movies/:id" element={<MovieDetailsPage/>}/>
+
+
                 {/* Ruta para página no encontrada */}
-                <Route path="*" element={<div style={{ color: "white", textAlign: "center", marginTop: 40 }}>Página no encontrada</div>} />
+                <Route path="*" element={<div style={{color: "white", textAlign: "center", marginTop: 40}}>Página no
+                    encontrada</div>}/>
             </Routes>
         </div>
     );
@@ -146,7 +153,7 @@ function AppContent() {
 function App() {
     return (
         <Router>
-            <AppContent />
+            <AppContent/>
         </Router>
     );
 }
