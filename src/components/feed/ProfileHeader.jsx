@@ -16,7 +16,7 @@ export function ProfileHeader({ userId }) {
                 if (!token) throw new Error("No se encontró el token de autenticación")
 
                 const response = await fetch(
-                    `https://tramaback-api.up.railway.app/trama/users/${userId}`,
+                    `https://tramaback-api.up.railway.app/trama/users/id/${userId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,

@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Update API base URL for movie search and modify workspace.xml commit message">
+    <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Add authentication pages and update routing for user login and registration">
+      <change afterPath="$PROJECT_DIR$/Endpoints.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/FollowersList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/FollowingList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/LikedItemCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/LikesList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/ListCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/ListsList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/UserCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/use-movie-search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-movie-search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/MovieList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MovieList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ProfileHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/ReviweList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ReviewList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,21 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Lotus/IdeaProjects/TramaFront",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lotus\IdeaProjects\TramaFront" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -71,6 +88,7 @@
       <updated>1749613398959</updated>
       <workItem from="1749613400432" duration="1131000" />
       <workItem from="1749614571624" duration="6614000" />
+      <workItem from="1749658535316" duration="6498000" />
     </task>
     <task id="LOCAL-00001" summary="Listar películas en busqueda">
       <option name="closed" value="true" />
@@ -88,31 +106,7 @@
       <option name="project" value="LOCAL" />
       <updated>1749622100519</updated>
     </task>
-    <task id="LOCAL-00003" summary="Add authService for user registration, login, and logout functionality">
-      <option name="closed" value="true" />
-      <created>1749622592329</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1749622592329</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Fix API URL in authService and update last commit message in workspace.xml">
-      <option name="closed" value="true" />
-      <created>1749624134432</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1749624134432</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Update API base URL for movie search and modify workspace.xml commit message">
-      <option name="closed" value="true" />
-      <created>1749624266814</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1749624266814</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,9 +115,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Listar películas en busqueda" />
     <MESSAGE value="Add authentication pages and update routing for user login and registration" />
-    <MESSAGE value="Add authService for user registration, login, and logout functionality" />
-    <MESSAGE value="Fix API URL in authService and update last commit message in workspace.xml" />
-    <MESSAGE value="Update API base URL for movie search and modify workspace.xml commit message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update API base URL for movie search and modify workspace.xml commit message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add authentication pages and update routing for user login and registration" />
   </component>
 </project>
