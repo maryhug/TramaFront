@@ -8,6 +8,7 @@ import { useMovieSearch } from "../hooks/use-movie-search"
 
 export default function Movies() {
     const [activeTab, setActiveTab] = useState("movies")
+    const [favorites, setFavorites] = useState([])
     const {
         searchQuery,
         movies,
@@ -24,12 +25,25 @@ export default function Movies() {
         setActiveTab(tabId)
     }
 
+    const toggleFavorite = (movie) => {
+        setFavorites((prev) =>
+            prev.some((fav) => fav.id === movie.id)
+                ? prev.filter((fav) => fav.id !== movie.id)
+                : [...prev, movie]
+        )
+    }
+
     const renderContent = () => {
         switch (activeTab) {
             case "movies":
                 return (
                     <>
-                        <MovieList movies={movies} title="Películas encontradas" />
+                        <MovieList
+                            movies={movies}
+                            title="Películas encontradas"
+                            favorites={favorites}
+                            onToggleFavorite={toggleFavorite}
+                        />
                         {movies.length > 0 && (
                             <div className="flex justify-center items-center space-x-2 mt-4">
                                 <button

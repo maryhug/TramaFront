@@ -1,9 +1,7 @@
 import { MovieItem } from "./MovieItem"
-
-// src/components/feed/MovieList.jsx
 import React from "react"
 
-export function MovieList({ movies, title }) {
+export function MovieList({ movies, title, favorites, onToggleFavorite }) {
     if (!movies || movies.length === 0) {
         return <div className="text-gray-400 text-center py-8">No se encontraron películas.</div>
     }
@@ -22,11 +20,16 @@ export function MovieList({ movies, title }) {
                                     className="w-16 h-24 object-cover rounded"
                                 />
                             )}
-                            <div>
+                            <div className="flex-1">
                                 <span className="font-semibold text-lg">{movie.title}</span>
                                 <div className="text-gray-400 text-sm">Director: {movie.director}</div>
                                 <div className="text-gray-400 text-sm">Estreno: {movie.releaseDate}</div>
                             </div>
+                            <MovieItem
+                                movie={movie}
+                                isFavorite={favorites.some((fav) => fav.id === movie.id)}
+                                onToggleFavorite={onToggleFavorite}
+                            />
                         </div>
                     </li>
                 ))}
