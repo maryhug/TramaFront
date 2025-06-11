@@ -5,24 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Add authentication pages and update routing for user login and registration">
-      <change afterPath="$PROJECT_DIR$/Endpoints.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/FollowersList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/FollowingList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/LikedItemCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/LikesList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/ListCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/ListsList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/UserCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/UserSearchResults.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/UserSearchBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/use-user-search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/feed/MovieList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MovieList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/feed/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ProfileHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/feed/ReviweList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ReviewList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,6 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.ListsList.jsx.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
