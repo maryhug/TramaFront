@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Reemplaza esta URL con la URL base de tu API de backend
-const API_URL = 'tramaback-api.up.railway.app/trama'; // Ejemplo basado en la conversación anterior
+const API_URL = 'https://tramaback-api.up.railway.app/trama'; // Añadido https://
 
 const register = (name, email, password) => {
     return axios.post(`${API_URL}/users/save`, {
@@ -15,7 +15,7 @@ const register = (name, email, password) => {
 };
 
 const login = (email, password) => {
-    return axios.post(`${API_URL}/auth/login`, {
+    return axios.post(`${API_URL}/auth/login`, { // Ahora usará la URL correcta
         email,
         password,
     }).then((response) => {
