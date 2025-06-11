@@ -2,19 +2,19 @@ import { Avatar } from "../ui/Avatar"
 
 export function CreatePost() {
     return (
-        <div className="bg-gray-800 rounded-lg border border-gray-600 p-4 mb-6">
+        <div className="bg-gray-800 rounded-lg border border-gray-800 p-4 mb-6">
             <div className="flex items-center gap-3">
                 <Avatar src="/placeholder.svg?height=40&width=40" alt="User" />
                 <div className="flex-1">
                     <input
                         type="text"
                         placeholder="Crear Publicación"
-                        className="w-full px-4 py-3 bg-gray-200 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-gray-500 border border-gray-500 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     />
                 </div>
                 <div className="flex gap-2">
                     <button className="p-2 hover:bg-gray-100 rounded-lg">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
@@ -24,7 +24,7 @@ export function CreatePost() {
                         </svg>
                     </button>
                     <button className="p-2 hover:bg-gray-100 rounded-lg">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
