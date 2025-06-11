@@ -1,35 +1,55 @@
-// src/services/authService.js
 import axios from 'axios';
 
-// Reemplaza esta URL con la URL base de tu API de backend
-const API_URL = 'https://tramaback-api.up.railway.app/trama'; // Añadido https://
+const API_URL = 'https://tramaback-api.up.railway.app/trama';
 
 const register = (name, email, password) => {
     return axios.post(`${API_URL}/users/save`, {
         name,
         email,
-        passwordHash: password, // El backend debería encargarse del hashing real
-        role: 'USER', // Rol por defecto
-        isActive: true, // Estado por defecto
+        passwordHash: password,
+        role: 'USER',
+        isActive: true,
     });
 };
 
-const login = (email, password) => {
-    return axios.post(`${API_URL}/auth/login`, { // Ahora usará la URL correcta
-        email,
-        password,
-    }).then((response) => {
-        if (response.data.token) {
-            // Almacena el usuario y el token
-            localStorage.setItem('user', JSON.stringify(response.data));
+const login = async (email, password) => {
+    const response = await axios.post(`${API_URL}/auth/login`, { email, password });
+    if (response.data.token) {
+        let userId = response.data.id;
+        let name = response.data.name;
+        let emailResp = response.data.email;
+
+        if (!userId) {
+            const userInfo = await axios.get(`${API_URL}/users/email/${emailResp}`, {
+                headers: { Authorization: `Bearer ${response.data.token}` }
+            });
+            userId = userInfo.data.id;
+            name = userInfo.data.name;
+            emailResp = userInfo.data.email;
         }
-        return response.data;
-    });
+
+        const userData = {
+            token: response.data.token,
+            user: {
+                id: userId,
+                name: name,
+                email: emailResp,
+            }
+        };
+        localStorage.setItem('user', JSON.stringify(userData));
+        localStorage.setItem('userId', String(userId));
+        // Elimina claves sueltas si existen
+        localStorage.removeItem('token');
+        localStorage.removeItem('id');
+        localStorage.removeItem('name');
+        localStorage.removeItem('email');
+    }
+    return response.data;
 };
 
 const logout = () => {
     localStorage.removeItem('user');
-    // Aquí podrías también llamar a un endpoint de logout en el backend si existe
+    localStorage.removeItem('userId');
 };
 
 const getCurrentUser = () => {
@@ -41,7 +61,7 @@ const getCurrentUser = () => {
         return null;
     } catch (error) {
         console.error("Error parsing user from localStorage", error);
-        localStorage.removeItem('user'); // Limpiar localStorage si está corrupto
+        localStorage.removeItem('user');
         return null;
     }
 };

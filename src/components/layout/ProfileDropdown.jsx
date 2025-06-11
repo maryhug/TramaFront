@@ -1,32 +1,25 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { DropdownMenu, DropdownMenuItem } from "./DropdownMenu"
 import { UserIcon, SettingsIcon, LogOutIcon } from "../icons/Icons"
 import { useNavigate } from "react-router-dom"
 
-export function ProfileDropdown({ userId }) {
+export function ProfileDropdown() {
     const [userData, setUserData] = useState(null)
     const navigate = useNavigate()
 
     useEffect(() => {
-        const fetchUserData = async () => {
-            try {
-                const response = await fetch(`http://tramaback-api.up.railway.app/trama/users/${userId}`)
-                if (!response.ok) {
-                    throw new Error('Error al obtener datos del usuario')
-                }
-                const data = await response.json()
-                setUserData(data)
-            } catch (error) {
-                console.error('Error:', error)
-            }
+        // Obtén el usuario autenticado desde localStorage
+        const userObj = JSON.parse(localStorage.getItem("user"))
+        if (userObj && userObj.user) {
+            setUserData({
+                name: userObj.user.name,
+                email: userObj.user.email,
+                avatar: userObj.user.avatar || "/placeholder.svg?height=40&width=40"
+            })
         }
-
-        if (userId) {
-            fetchUserData()
-        }
-    }, [userId])
+    }, [])
 
     const handleProfileClick = () => {
         navigate("/profile")
@@ -37,7 +30,9 @@ export function ProfileDropdown({ userId }) {
     }
 
     const handleLogoutClick = () => {
-        console.log("Logout user")
+        localStorage.removeItem("user")
+        localStorage.removeItem("userId")
+        navigate("/login")
     }
 
     return (

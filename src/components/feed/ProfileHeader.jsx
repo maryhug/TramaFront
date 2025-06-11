@@ -11,19 +11,26 @@ export function ProfileHeader({ userId }) {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                console.log('Intentando obtener usuario con ID:', userId)
-                const response = await fetch(`http://tramaback-api.up.railway.app/trama/users/${userId}`)
-                console.log('Respuesta de la API:', response)
+                const userObj = JSON.parse(localStorage.getItem("user"))
+                const token = userObj?.token
+                if (!token) throw new Error("No se encontró el token de autenticación")
+
+                const response = await fetch(
+                    `https://tramaback-api.up.railway.app/trama/users/${userId}`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    }
+                )
 
                 if (!response.ok) {
                     throw new Error(`Error HTTP: ${response.status}`)
                 }
 
                 const data = await response.json()
-                console.log('Datos recibidos:', data)
                 setUserData(data)
             } catch (error) {
-                console.error('Error detallado:', error)
                 setError(error.message)
             } finally {
                 setLoading(false)
@@ -33,7 +40,6 @@ export function ProfileHeader({ userId }) {
         if (userId) {
             fetchUserData()
         } else {
-            console.error('No se proporcionó userId')
             setLoading(false)
         }
     }, [userId])
