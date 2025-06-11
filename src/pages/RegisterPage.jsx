@@ -36,47 +36,100 @@ export default function RegisterPage() {
     };
 
     return (
-        <div style={{ padding: '20px', maxWidth: '400px', margin: 'auto', color: 'white' }}>
-            <h2>Registro</h2>
-            <form onSubmit={handleRegister}>
-                <div>
-                    <label htmlFor="name">Nombre:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        required
-                        style={{ width: '100%', padding: '8px', margin: '8px 0', color: 'black' }}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                        style={{ width: '100%', padding: '8px', margin: '8px 0', color: 'black' }}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password">Contraseña:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        style={{ width: '100%', padding: '8px', margin: '8px 0', color: 'black' }}
-                    />
-                </div>
-                <button type="submit" disabled={loading} style={{ padding: '10px 15px', cursor: 'pointer' }}>
-                    {loading ? 'Registrando...' : 'Registrar'}
-                </button>
-            </form>
-            {message && <p style={{ color: message.startsWith('¡Registro exitoso!') ? 'green' : 'red' }}>{message}</p>}
+        // <div className="bg-gray-900 min-h-screen"style={{ padding: '20px', maxWidth: '400px', margin: 'auto', color: 'white' }}>
+        //     <h2>Registro</h2>
+        //     <form onSubmit={handleRegister}>
+        //         <div>
+        //             <label htmlFor="name">Nombre:</label>
+        //             <input
+        //                 type="text"
+        //                 id="name"
+        //                 value={name}
+        //                 onChange={(e) => setName(e.target.value)}
+        //                 required
+        //                 style={{ width: '100%', padding: '8px', margin: '8px 0', color: 'black' }}
+        //             />
+        //         </div>
+        //         <div>
+        //             <label htmlFor="email">Email:</label>
+        //             <input
+        //                 type="email"
+        //                 id="email"
+        //                 value={email}
+        //                 onChange={(e) => setEmail(e.target.value)}
+        //                 required
+        //                 style={{ width: '100%', padding: '8px', margin: '8px 0', color: 'black' }}
+        //             />
+        //         </div>
+        //         <div>
+        //             <label htmlFor="password">Contraseña:</label>
+        //             <input
+        //                 type="password"
+        //                 id="password"
+        //                 value={password}
+        //                 onChange={(e) => setPassword(e.target.value)}
+        //                 required
+        //                 style={{ width: '100%', padding: '8px', margin: '8px 0', color: 'black' }}
+        //             />
+        //         </div>
+        //         <button type="submit" disabled={loading} style={{ padding: '10px 15px', cursor: 'pointer' }}>
+        //             {loading ? 'Registrando...' : 'Registrar'}
+        //         </button>
+        //     </form>
+        //     {message && <p style={{ color: message.startsWith('¡Registro exitoso!') ? 'green' : 'red' }}>{message}</p>}
+        // </div>
+
+        <div className="bg-gray-900 min-h-screen flex items-center justify-center">
+            <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+                <h2 className="text-2xl font-bold text-white mb-6 text-center">Registro</h2>
+                <form onSubmit={handleRegister} className="space-y-5">
+                    <div>
+                        <label htmlFor="name" className="block text-gray-200 mb-1">Nombre:</label>
+                        <input
+                            type="text"
+                            id="name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                            className="w-full px-4 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-red-400"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="email" className="block text-gray-200 mb-1">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            className="w-full px-4 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-red-400"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="password" className="block text-gray-200 mb-1">Contraseña:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            className="w-full px-4 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-red-400"
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        disabled={loading}
+                        className="w-full py-2 rounded bg-red-500 hover:bg-red-600 text-white font-semibold transition-colors disabled:opacity-60"
+                    >
+                        {loading ? 'Registrando...' : 'Registrar'}
+                    </button>
+                </form>
+                {message && (
+                    <p className={`mt-4 text-center font-medium ${message.startsWith('¡Registro exitoso!') ? 'text-green-400' : 'text-red-400'}`}>
+                        {message}
+                    </p>
+                )}
+            </div>
         </div>
     );
 }

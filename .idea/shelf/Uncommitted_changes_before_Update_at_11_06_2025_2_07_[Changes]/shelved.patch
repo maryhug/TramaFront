@@ -1,0 +1,117 @@
+Index: src/services/authService.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// src/services/authService.js\r\nimport axios from 'axios';\r\n\r\n// Reemplaza esta URL con la URL base de tu API de backend\r\nconst API_URL = 'tramaback-api.up.railway.app/trama'; // Ejemplo basado en la conversación anterior\r\n\r\nconst register = (name, email, password) => {\r\n    return axios.post(`${API_URL}/users/save`, {\r\n        name,\r\n        email,\r\n        passwordHash: password, // El backend debería encargarse del hashing real\r\n        role: 'USER', // Rol por defecto\r\n        isActive: true, // Estado por defecto\r\n    });\r\n};\r\n\r\nconst login = (email, password) => {\r\n    return axios.post(`${API_URL}/auth/login`, {\r\n        email,\r\n        password,\r\n    }).then((response) => {\r\n        if (response.data.token) {\r\n            // Almacena el usuario y el token\r\n            localStorage.setItem('user', JSON.stringify(response.data));\r\n        }\r\n        return response.data;\r\n    });\r\n};\r\n\r\nconst logout = () => {\r\n    localStorage.removeItem('user');\r\n    // Aquí podrías también llamar a un endpoint de logout en el backend si existe\r\n};\r\n\r\nconst getCurrentUser = () => {\r\n    try {\r\n        const userStr = localStorage.getItem('user');\r\n        if (userStr) {\r\n            return JSON.parse(userStr);\r\n        }\r\n        return null;\r\n    } catch (error) {\r\n        console.error(\"Error parsing user from localStorage\", error);\r\n        localStorage.removeItem('user'); // Limpiar localStorage si está corrupto\r\n        return null;\r\n    }\r\n};\r\n\r\nconst authService = {\r\n    register,\r\n    login,\r\n    logout,\r\n    getCurrentUser,\r\n};\r\n\r\nexport default authService;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/services/authService.js b/src/services/authService.js
+--- a/src/services/authService.js	(revision 4c65a2fe3671d227ae68b7971c9b64223c19bfa0)
++++ b/src/services/authService.js	(date 1749625424235)
+@@ -2,7 +2,7 @@
+ import axios from 'axios';
+ 
+ // Reemplaza esta URL con la URL base de tu API de backend
+-const API_URL = 'tramaback-api.up.railway.app/trama'; // Ejemplo basado en la conversación anterior
++const API_URL = 'https://tramaback-api.up.railway.app/trama'; // Añadido https://
+ 
+ const register = (name, email, password) => {
+     return axios.post(`${API_URL}/users/save`, {
+@@ -15,7 +15,7 @@
+ };
+ 
+ const login = (email, password) => {
+-    return axios.post(`${API_URL}/auth/login`, {
++    return axios.post(`${API_URL}/auth/login`, { // Ahora usará la URL correcta
+         email,
+         password,
+     }).then((response) => {
+Index: src/hooks/use-movie-search.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { useState, useRef } from \"react\"\r\nimport axios from \"axios\"\r\n\r\nconst API_BASE_URL = \"http://localhost:5000\"\r\nconst PAGE_SIZE = 10\r\n\r\nexport function useMovieSearch() {\r\n    const [searchQuery, setSearchQuery] = useState(\"\")\r\n    const [movies, setMovies] = useState([])\r\n    const [loading, setLoading] = useState(false)\r\n    const [page, setPage] = useState(1)\r\n    const [totalPages, setTotalPages] = useState(1)\r\n    const lastQueryRef = useRef(\"\")\r\n    const allResultsRef = useRef([])\r\n\r\n    const fetchMovies = async (query, pageNum = 1) => {\r\n        if (!query.trim()) {\r\n            setMovies([])\r\n            setTotalPages(1)\r\n            setPage(1)\r\n            allResultsRef.current = []\r\n            return\r\n        }\r\n        setLoading(true)\r\n        try {\r\n            const response = await axios.get(\r\n                `${API_BASE_URL}/movies/title/${encodeURIComponent(query)}`\r\n            )\r\n            // Si la respuesta es un array, úsala directamente\r\n            const results = Array.isArray(response.data)\r\n                ? response.data\r\n                : (response.data.results || [])\r\n            allResultsRef.current = results\r\n            const total = results.length\r\n            setTotalPages(Math.max(1, Math.ceil(total / PAGE_SIZE)))\r\n            setPage(pageNum)\r\n            // Paginar manualmente\r\n            const start = (pageNum - 1) * PAGE_SIZE\r\n            const end = start + PAGE_SIZE\r\n            setMovies(\r\n                results.slice(start, end).map(movie => ({\r\n                    id: movie.id,\r\n                    title: movie.title,\r\n                    director: movie.director || \"Desconocido\",\r\n                    releaseDate: movie.releaseDate || \"N/A\",\r\n                    posterUrl: movie.posterUrl || \"\"\r\n                }))\r\n            )\r\n        } catch {\r\n            setMovies([])\r\n            setTotalPages(1)\r\n            setPage(1)\r\n            allResultsRef.current = []\r\n        } finally {\r\n            setLoading(false)\r\n        }\r\n    }\r\n\r\n    const handleInputChange = (e) => {\r\n        setSearchQuery(e.target.value)\r\n    }\r\n\r\n    const handleKeyDown = async (e) => {\r\n        if (e.key === \"Enter\") {\r\n            lastQueryRef.current = searchQuery\r\n            await fetchMovies(searchQuery, 1)\r\n        }\r\n    }\r\n\r\n    const handleSearchClear = () => {\r\n        setSearchQuery(\"\")\r\n        setMovies([])\r\n        setPage(1)\r\n        setTotalPages(1)\r\n        lastQueryRef.current = \"\"\r\n        allResultsRef.current = []\r\n    }\r\n\r\n    const goToPage = async (newPage) => {\r\n        // No hace falta llamar a la API de nuevo, solo paginar localmente\r\n        const results = allResultsRef.current\r\n        setPage(newPage)\r\n        const start = (newPage - 1) * PAGE_SIZE\r\n        const end = start + PAGE_SIZE\r\n        setMovies(\r\n            results.slice(start, end).map(movie => ({\r\n                id: movie.id,\r\n                title: movie.title,\r\n                director: movie.director || \"Desconocido\",\r\n                releaseDate: movie.releaseDate || \"N/A\",\r\n                posterUrl: movie.posterUrl || \"\"\r\n            }))\r\n        )\r\n    }\r\n\r\n    return {\r\n        searchQuery,\r\n        movies,\r\n        loading,\r\n        page,\r\n        totalPages,\r\n        handleInputChange,\r\n        handleKeyDown,\r\n        handleSearchClear,\r\n        goToPage\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/hooks/use-movie-search.js b/src/hooks/use-movie-search.js
+--- a/src/hooks/use-movie-search.js	(revision 4c65a2fe3671d227ae68b7971c9b64223c19bfa0)
++++ b/src/hooks/use-movie-search.js	(date 1749625424235)
+@@ -1,7 +1,7 @@
+ import { useState, useRef } from "react"
+ import axios from "axios"
+ 
+-const API_BASE_URL = "http://localhost:5000"
++const API_BASE_URL = "https://tramaback-api.up.railway.app"
+ const PAGE_SIZE = 10
+ 
+ export function useMovieSearch() {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8bf77889-3616-4ab8-927e-03ce3239751f\" name=\"Changes\" comment=\"Add authentication pages and update routing for user login and registration\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Danieloid3&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/maryhug/TramaFront.git\",\r\n    \"accountId\": \"7b0d8ccc-46ff-441d-aa50-4b89be6ed26c\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2yLUYyri3R54eLD3AzWOXfIB3tJ\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"ts.external.directory.path\": \"C:\\\\Program Files\\\\JetBrains\\\\IntelliJ IDEA 2025.1.1.1\\\\plugins\\\\javascript-plugin\\\\jsLanguageServicesImpl\\\\external\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8bf77889-3616-4ab8-927e-03ce3239751f\" name=\"Changes\" comment=\"\" />\r\n      <created>1749613398959</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1749613398959</updated>\r\n      <workItem from=\"1749613400432\" duration=\"1131000\" />\r\n      <workItem from=\"1749614571624\" duration=\"6614000\" />\r\n      <workItem from=\"1749623707366\" duration=\"1440000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Listar películas en busqueda\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1749621236692</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1749621236692</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Add authentication pages and update routing for user login and registration\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1749622100519</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1749622100519</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Listar películas en busqueda\" />\r\n    <MESSAGE value=\"Add authentication pages and update routing for user login and registration\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Add authentication pages and update routing for user login and registration\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4c65a2fe3671d227ae68b7971c9b64223c19bfa0)
++++ b/.idea/workspace.xml	(date 1749625633282)
+@@ -4,7 +4,14 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
++<<<<<<< HEAD
+     <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Add authentication pages and update routing for user login and registration" />
++=======
++    <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Update API base URL for movie search and modify workspace.xml commit message">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/hooks/use-movie-search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-movie-search.js" afterDir="false" />
++    </list>
++>>>>>>> 26ee7bc8bb153ff68d5e1626cd01fa5f187117a8
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -88,7 +95,31 @@
+       <option name="project" value="LOCAL" />
+       <updated>1749622100519</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Add authService for user registration, login, and logout functionality">
++      <option name="closed" value="true" />
++      <created>1749622592329</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1749622592329</updated>
++    </task>
++    <task id="LOCAL-00004" summary="Fix API URL in authService and update last commit message in workspace.xml">
++      <option name="closed" value="true" />
++      <created>1749624134432</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1749624134432</updated>
++    </task>
++    <task id="LOCAL-00005" summary="Update API base URL for movie search and modify workspace.xml commit message">
++      <option name="closed" value="true" />
++      <created>1749624266814</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1749624266814</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -97,6 +128,9 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Listar películas en busqueda" />
+     <MESSAGE value="Add authentication pages and update routing for user login and registration" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Add authentication pages and update routing for user login and registration" />
++    <MESSAGE value="Add authService for user registration, login, and logout functionality" />
++    <MESSAGE value="Fix API URL in authService and update last commit message in workspace.xml" />
++    <MESSAGE value="Update API base URL for movie search and modify workspace.xml commit message" />
++    <option name="LAST_COMMIT_MESSAGE" value="Update API base URL for movie search and modify workspace.xml commit message" />
+   </component>
+ </project>
+\ No newline at end of file
