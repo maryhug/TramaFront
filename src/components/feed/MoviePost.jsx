@@ -24,7 +24,7 @@ import { StarRating } from "../ui/StarRating"
 
 export function MoviePost({ user, movie, review, votes, comments, className = "" }) {
     return (
-        <article className={`bg-white rounded-lg border border-gray-200 p-6 ${className}`}>
+        <article className={`bg-gray-600 rounded-lg border border-gray-600 p-6 ${className}`}>
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -36,13 +36,13 @@ export function MoviePost({ user, movie, review, votes, comments, className = ""
                 </div>
 
                 <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1 text-sm text-gray-500">
+                    <div className="flex items-center gap-1 text-sm text-black">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
                         </svg>
                         {votes.up}
                     </div>
-                    <div className="flex items-center gap-1 text-sm text-gray-500">
+                    <div className="flex items-center gap-1 text-sm text-black">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13l-5 5m0 0l-5-5m5 5V6" />
                         </svg>
@@ -54,12 +54,12 @@ export function MoviePost({ user, movie, review, votes, comments, className = ""
             {/* Movie Info */}
             <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
-                    <h2 className="text-lg font-semibold text-gray-900">
+                    <h2 className="text-lg font-semibold text-black">
                         {movie.title} ({movie.year})
                     </h2>
                     <StarRating rating={movie.rating} />
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed">{review}</p>
+                <p className="text-black text-sm leading-relaxed">{review}</p>
             </div>
 
             {/* Movie Poster */}

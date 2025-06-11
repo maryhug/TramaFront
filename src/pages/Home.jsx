@@ -8,7 +8,7 @@ export default function Home() {
         {
             user: {
                 name: "Marie_bug",
-                avatar: "/placeholder.svg?height=40&width=40",
+                avatar: "https://image.tmdb.org/t/p/w500/evvT3HUwoQYoPQXWFO10R6AvhxG.jpg",
                 timeAgo: "Hace 22 Horas",
             },
             movie: {
@@ -24,14 +24,14 @@ export default function Home() {
         {
             user: {
                 name: "Aang_",
-                avatar: "/placeholder.svg?height=40&width=40",
+                avatar: "https://image.tmdb.org/t/p/w500/evvT3HUwoQYoPQXWFO10R6AvhxG.jpg",
                 timeAgo: "Hace 4 días",
             },
             movie: {
                 title: "La La Land",
                 year: 2016,
                 rating: 5,
-                poster: "/placeholder.svg?height=400&width=300",
+                poster: "https://image.tmdb.org/t/p/w500/evvT3HUwoQYoPQXWFO10R6AvhxG.jpg",
             },
             review:
                 "Una obra maestra del cine musical moderno. Ryan Gosling y Emma Stone tienen una química increíble en pantalla.",

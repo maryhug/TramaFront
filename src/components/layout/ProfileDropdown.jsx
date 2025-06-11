@@ -13,7 +13,7 @@ export function ProfileDropdown({ user }) {
     }
 
     const handleSettingsClick = () => {
-        console.log("Navigate to settings")
+        navigate("/settings")
     }
 
     const handleLogoutClick = () => {

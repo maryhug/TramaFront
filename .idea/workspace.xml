@@ -5,18 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43794c30-1668-4572-8191-9081c1dbeff2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/footer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/ProfileHeader.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/ReviewCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/ReviweList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/feed/settings-sections.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/sidebar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/settings/account-section.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/settings/legal-section.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/settings/notifications-section.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/settings/preferences-section.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/settings/privacy-section.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/toggle.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/TabNavigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/TabNavigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/MovieItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MovieItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/MoviePost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MoviePost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icons/Icons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/Icons.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/ProfileDropdown.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/ProfileDropdown.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +60,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/maryh/IdeaProjects/tramafront&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/maryh/IdeaProjects/TramaBack&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -93,7 +97,11 @@
       <workItem from="1749513138857" duration="1781000" />
       <workItem from="1749519490972" duration="11892000" />
       <workItem from="1749569353949" duration="17347000" />
-      <workItem from="1749587399846" duration="2246000" />
+      <workItem from="1749587399846" duration="2400000" />
+      <workItem from="1749594257939" duration="459000" />
+      <workItem from="1749595705832" duration="865000" />
+      <workItem from="1749596797488" duration="1724000" />
+      <workItem from="1749598554196" duration="3202000" />
     </task>
     <servers />
   </component>

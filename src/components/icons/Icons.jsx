@@ -182,3 +182,55 @@ export function ThumbsDownIcon({ className = "w-4 h-4" }) {
         </svg>
     )
 }
+
+export function ChevronRightIcon({ className = "w-4 h-4" }) {
+    return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+            />
+        </svg>
+    )
+}
+
+export function HomeIcon({ className = "w-5 h-5" }) {
+    return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M3 9.75L12 3l9 6.75V21a.75.75 0 01-.75.75H3.75A.75.75 0 013 21V9.75z" />
+        </svg>
+    );
+}
+
+export function SearchIcon({ className = "w-5 h-5" }) {
+    return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
+
+export function MailIcon({ className = "w-5 h-5" }) {
+    return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M3 5h18a2 2 0 012 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V7a2 2 0 012-2zm0 0l9 7 9-7" />
+        </svg>
+    );
+}
+
+export function DotsIcon({ className = "w-5 h-5" }) {
+    return (
+        <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="5" cy="12" r="2" />
+            <circle cx="12" cy="12" r="2" />
+            <circle cx="19" cy="12" r="2" />
+        </svg>
+    );
+}
+
+

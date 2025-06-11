@@ -7,6 +7,7 @@ import Buscar from "./pages/Movies"
 import Review from "./pages/Review"
 import Profile from "./pages/Profile"
 import Layout from "./components/layout/Layout"
+import Settings from "./pages/Settings"
 
 function App() {
     return (
@@ -66,7 +67,19 @@ function App() {
                             </Layout>
                         }
                     />
+
+                    <Route
+                        path="/settings"
+                        element={
+                            <Settings activeNavItem="lists">
+                                <Profile />
+                            </Settings>
+                        }
+                    />
+
+
                 </Routes>
+
             </div>
         </Router>
     )
