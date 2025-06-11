@@ -36,14 +36,14 @@ export function RightSidebar() {
     return (
         <aside className="w-80 p-6 space-y-6">
             {/* Tendencias */}
-            <div className="bg-white rounded-lg border border-gray-200 p-4">
-                <h2 className="font-semibold text-gray-900 mb-4">Tendencias</h2>
+            <div className="bg-gray-800 rounded-lg border border-gray-800 p-4">
+                <h2 className="font-semibold text-white mb-4">Tendencias</h2>
                 <div className="space-y-4">
                     {trendingContent.map((item, index) => (
                         <div key={index} className="space-y-1">
-                            <p className="text-xs text-gray-500">{item.type}</p>
-                            <h3 className="font-semibold text-gray-900">{item.title}</h3>
-                            <p className="text-xs text-gray-500">{item.stats}</p>
+                            <p className="text-xs text-white">{item.type}</p>
+                            <h3 className="font-semibold text-white">{item.title}</h3>
+                            <p className="text-xs text-white">{item.stats}</p>
                         </div>
                     ))}
                 </div>
@@ -51,16 +51,16 @@ export function RightSidebar() {
             </div>
 
             {/* A quién seguir */}
-            <div className="bg-white rounded-lg border border-gray-200 p-4">
-                <h2 className="font-semibold text-gray-900 mb-4">A quién seguir</h2>
+            <div className="bg-gray-800 rounded-lg border border-gray-800 p-4">
+                <h2 className="font-semibold text-white mb-4">A quién seguir</h2>
                 <div className="space-y-4">
                     {suggestedUsers.map((user, index) => (
                         <div key={index} className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
                                 <Avatar src={user.avatar} alt={user.name} size="sm" />
                                 <div>
-                                    <h3 className="font-medium text-gray-900 text-sm">{user.name}</h3>
-                                    <p className="text-xs text-gray-500">{user.username}</p>
+                                    <h3 className="font-medium text-white text-sm">{user.name}</h3>
+                                    <p className="text-xs text-white">{user.username}</p>
                                 </div>
                             </div>
                             <Button size="sm" variant="primary">

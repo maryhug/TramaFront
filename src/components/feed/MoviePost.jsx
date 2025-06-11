@@ -24,7 +24,7 @@ import { StarRating } from "../ui/StarRating"
 
 export function MoviePost({ user, movie, review, votes, comments, className = "" }) {
     return (
-        <article className={`bg-gray-600 rounded-lg border border-gray-600 p-6 ${className}`}>
+        <article className={`bg-gray-800 rounded-lg border border-gray-600 p-6 ${className}`}>
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
