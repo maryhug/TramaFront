@@ -24,8 +24,9 @@ export function useUserSearch() {
                 `${API_BASE_URL}/trama/users/name/${encodeURIComponent(query)}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             )
-            // Si la respuesta es un solo objeto, lo convertimos a array
-            const data = Array.isArray(response.data) ? response.data : [response.data]
+            let data = Array.isArray(response.data) ? response.data : [response.data]
+            // Filtra objetos vacíos
+            data = data.filter(u => u && Object.keys(u).length > 0)
             setUsers(data)
         } catch (err) {
             setUsers([])
