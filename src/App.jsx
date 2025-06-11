@@ -8,6 +8,8 @@ import Review from "./pages/Review"
 import Profile from "./pages/Profile"
 import Layout from "./components/layout/Layout"
 import Settings from "./pages/Settings"
+import CommentsPage from "./pages/Comentarios"
+import { MoviePost } from "./components/feed/MoviePost";
 
 function App() {
     return (
@@ -76,10 +78,25 @@ function App() {
                             </Settings>
                         }
                     />
+                    <Route
+                        path="/comments"
+                        element={
+                            <Layout activeNavItem="comments">
+                                <CommentsPage />
+                            </Layout>
+                        }
+                    />
 
+                    <Route
+                        path="/moviepost"
+                        element={
+                            <Layout activeNavItem="MoviePost">
+                                <MoviePost />
+                            </Layout>
+                        }
+                    />
 
                 </Routes>
-
             </div>
         </Router>
     )

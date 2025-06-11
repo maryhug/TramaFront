@@ -1,9 +1,6 @@
 export function ContentFilters() {
     const filters = [
         { label: "Películas", active: true, color: "bg-red-100 text-red-700" },
-        { label: "Series", active: false, color: "bg-gray-100 text-gray-700" },
-        { label: "New", active: false, color: "bg-gray-100 text-gray-700" },
-        { label: "Top", active: false, color: "bg-gray-100 text-gray-700" },
     ]
 
     return (

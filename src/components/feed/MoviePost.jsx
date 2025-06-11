@@ -1,5 +1,7 @@
 import { Avatar } from "../ui/Avatar"
 import { StarRating } from "../ui/StarRating"
+import { Link } from "react-router-dom"
+
 
 // interface MoviePostProps {
 //     user: {
@@ -34,21 +36,6 @@ export function MoviePost({ user, movie, review, votes, comments, className = ""
                         <p className="text-sm text-gray-500">{user.timeAgo}</p>
                     </div>
                 </div>
-
-                <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1 text-sm text-black">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
-                        </svg>
-                        {votes.up}
-                    </div>
-                    <div className="flex items-center gap-1 text-sm text-black">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13l-5 5m0 0l-5-5m5 5V6" />
-                        </svg>
-                        {votes.down}
-                    </div>
-                </div>
             </div>
 
             {/* Movie Info */}
@@ -76,7 +63,10 @@ export function MoviePost({ user, movie, review, votes, comments, className = ""
             {/* Actions */}
             <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center gap-6">
-                    <button className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700">
+                    <Link
+                        to="/comments"
+                        className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700"
+                    >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                                 strokeLinecap="round"
@@ -86,19 +76,7 @@ export function MoviePost({ user, movie, review, votes, comments, className = ""
                             />
                         </svg>
                         {comments} comentarios
-                    </button>
-
-                    <button className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
-                            />
-                        </svg>
-                        Compartir
-                    </button>
+                    </Link>
 
                     <button className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
