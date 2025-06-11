@@ -1,4 +1,5 @@
 import { Avatar } from "../ui/Avatar"
+import React from "react"
 
 export function CreatePost() {
     return (

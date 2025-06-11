@@ -1,66 +1,31 @@
+// // Función para calcular el tiempo transcurrido
+// function timeAgo(dateString) {
+//     const date = new Date(dateString)
+//     const now = new Date()
+//     const diff = Math.floor((now - date) / 1000 / 60 / 60) // horas
+//     if (diff < 24) return `Hace ${diff} horas`
+//     const days = Math.floor(diff / 24)
+//     return `Hace ${days} días`
+// }
 import { RightSidebar } from "../components/layout/RightSidebar"
 import { CreatePost } from "../components/feed/CreatePost"
 import { ContentFilters } from "../components/feed/ContentFilters"
-import { MoviePost } from "../components/feed/MoviePost"
-
+import { ReviewsFeed } from "../components/feed/ReviewsFeed"
 export default function Home() {
-    const samplePosts = [
-        {
-            user: {
-                name: "Marie_bug",
-                avatar: "https://image.tmdb.org/t/p/w500/evvT3HUwoQYoPQXWFO10R6AvhxG.jpg",
-                timeAgo: "Hace 22 Horas",
-            },
-            movie: {
-                title: "Lucy",
-                year: 2014,
-                rating: 4,
-            },
-            review:
-                "Muy buena película. Me encantó. Scarlett Johansson es una gran actriz. Los efectos visuales son muy buenos. La trama es buena. El jefe de la mafia coreana es re despiadado sin ningún tipo de remordimientos. Sólo le importa sus intereses. Morgan Freeman es también un gran actor. Personifica muy bien su personaje de científico. La califico a la película con un 10.",
-            votes: { up: 15, down: 0 },
-            comments: 2,
-        },
-        {
-            user: {
-                name: "Aang_",
-                avatar: "https://image.tmdb.org/t/p/w500/evvT3HUwoQYoPQXWFO10R6AvhxG.jpg",
-                timeAgo: "Hace 4 días",
-            },
-            movie: {
-                title: "La La Land",
-                year: 2016,
-                rating: 5,
-                poster: "https://image.tmdb.org/t/p/w500/evvT3HUwoQYoPQXWFO10R6AvhxG.jpg",
-            },
-            review:
-                "Una obra maestra del cine musical moderno. Ryan Gosling y Emma Stone tienen una química increíble en pantalla.",
-            votes: { up: 3, down: 0 },
-            comments: 2,
-        },
-    ]
+     // tramaback-api.up.railway.app
 
     return (
         <div className="min-h-screen bg-gray-900">
 
             <div className="flex max-w-7xl mx-auto">
 
-                {/* Main Content */}
                 <main className="flex-1 p-6">
                     <CreatePost />
                     <ContentFilters />
 
                     <div className="space-y-6">
-                        {samplePosts.map((post, index) => (
-                            <MoviePost
-                                key={index}
-                                user={post.user}
-                                movie={post.movie}
-                                review={post.review}
-                                votes={post.votes}
-                                comments={post.comments}
-                            />
-                        ))}
+                        <h1 className="text-2xl font-bold text-white mb-6">Últimas reviews</h1>
+                        <ReviewsFeed />
                     </div>
                 </main>
 

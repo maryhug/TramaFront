@@ -10,7 +10,7 @@ import Profile from "./pages/Profile";
 import Layout from "./components/layout/Layout"; // Asumo que tienes este componente
 import Settings from "./pages/Settings";
 import CommentsPage from "./pages/Comentarios";
-import { MoviePost } from "./components/feed/MoviePost";
+import { ReviewCard } from "./components/feed/ReviewCard"; // Asegúrate de que este componente exista
 
 // Nuevas importaciones
 import LoginPage from "./pages/LoginPage";
@@ -124,13 +124,15 @@ function AppContent() {
                     }
                 />
                 <Route
-                    path="/moviepost"
+                    path="/ReviewCard"
                     element={
-                        <Layout activeNavItem="MoviePost" currentUser={currentUser} onLogout={handleLogout}>
-                            <MoviePost />
+                        <Layout activeNavItem="ReviewCard" currentUser={currentUser} onLogout={handleLogout}>
+                            <ReviewCard />
                         </Layout>
                     }
                 />
+
+
                 {/* Puedes añadir una ruta para manejar páginas no encontradas */}
                 {/* <Route path="*" element={<NotFoundPage />} /> */}
             </Routes>

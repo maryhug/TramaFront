@@ -1,5 +1,6 @@
 import React from "react";
 
+//http://localhost:5000/movies
 const DiscoverSection = () => {
     const releases = [
         {

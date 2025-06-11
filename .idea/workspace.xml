@@ -4,20 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Add authentication pages and update routing for user login and registration">
-      <change afterPath="$PROJECT_DIR$/Endpoints.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/FollowersList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/FollowingList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/LikedItemCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/LikesList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/ListCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/ListsList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/feed/UserCard.jsx" afterDir="false" />
+    <list default="true" id="ed264ddf-22d2-42fb-9ebf-0dcc78b223ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/feed/ReviewsFeed.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2025_2_07_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2025_2_07__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tramafront.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/feed/MovieList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MovieList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/feed/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ProfileHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/feed/ReviweList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ReviewList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/CreatePost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/CreatePost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/MoviePost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/MoviePost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/feed/ReviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ReviewCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Discover.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Discover.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,94 +29,63 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Danieloid3&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "maryhug"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/maryhug/TramaFront.git&quot;,
-    &quot;accountId&quot;: &quot;e2fefdc5-6f62-44a9-9c4b-b82131921586&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/maryhug/TramaFront.git",
+    "accountId": "7b0d8ccc-46ff-441d-aa50-4b89be6ed26c"
   }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="2yLUYyri3R54eLD3AzWOXfIB3tJ" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2yNQNXCLg6Qm77B6l8H8s1LLLI6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Lotus/IdeaProjects/TramaFront",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/maryh/IdeaProjects/TramaFront",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Lotus\IdeaProjects\TramaFront" />
-    </key>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="" />
-      <created>1749613398959</created>
+      <changelist id="ed264ddf-22d2-42fb-9ebf-0dcc78b223ce" name="Changes" comment="" />
+      <created>1749672512105</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1749613398959</updated>
-      <workItem from="1749613400432" duration="1131000" />
-      <workItem from="1749614571624" duration="6614000" />
-      <workItem from="1749658535316" duration="6498000" />
+      <updated>1749672512105</updated>
+      <workItem from="1749672513680" duration="3994000" />
     </task>
-    <task id="LOCAL-00001" summary="Listar películas en busqueda">
-      <option name="closed" value="true" />
-      <created>1749621236692</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1749621236692</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add authentication pages and update routing for user login and registration">
-      <option name="closed" value="true" />
-      <created>1749622100519</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1749622100519</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Listar películas en busqueda" />
-    <MESSAGE value="Add authentication pages and update routing for user login and registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add authentication pages and update routing for user login and registration" />
   </component>
 </project>
