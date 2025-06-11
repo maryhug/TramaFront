@@ -6,9 +6,19 @@ import { ContentTabs } from "../components/layout/ContentTabs"
 import { MovieList } from "../components/feed/MovieList"
 import { useMovieSearch } from "../hooks/use-movie-search"
 
-export default function SearchPage() {
+export default function Movies() {
     const [activeTab, setActiveTab] = useState("movies")
-    const { searchQuery, movies, loading, handleSearchChange, handleSearchClear } = useMovieSearch()
+    const {
+        searchQuery,
+        movies,
+        loading,
+        page,
+        totalPages,
+        handleInputChange,
+        handleKeyDown,
+        handleSearchClear,
+        goToPage
+    } = useMovieSearch()
 
     const handleTabChange = (tabId) => {
         setActiveTab(tabId)
@@ -17,7 +27,32 @@ export default function SearchPage() {
     const renderContent = () => {
         switch (activeTab) {
             case "movies":
-                return <MovieList movies={movies} title="Movies" />
+                return (
+                    <>
+                        <MovieList movies={movies} title="Películas encontradas" />
+                        {movies.length > 0 && (
+                            <div className="flex justify-center items-center space-x-2 mt-4">
+                                <button
+                                    onClick={async () => await goToPage(page - 1)}
+                                    disabled={page === 1}
+                                    className="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
+                                >
+                                    Anterior
+                                </button>
+                                <span className="text-gray-300">
+                                    Página {page} de {totalPages}
+                                </span>
+                                <button
+                                    onClick={async () => await goToPage(page + 1)}
+                                    disabled={page === totalPages}
+                                    className="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
+                                >
+                                    Siguiente
+                                </button>
+                            </div>
+                        )}
+                    </>
+                )
             case "top":
                 return <div className="text-gray-400 text-center py-8">Top content coming soon...</div>
             case "users":
@@ -32,14 +67,19 @@ export default function SearchPage() {
             <div className="max-w-4xl mx-auto px-6 py-8">
                 <SearchSection
                     searchQuery={searchQuery}
-                    onSearchChange={handleSearchChange}
+                    onInputChange={handleInputChange}
+                    onKeyDown={handleKeyDown}
                     onSearchClear={handleSearchClear}
                 />
 
                 <ContentTabs activeTab={activeTab} onTabChange={handleTabChange} />
 
                 <div className="space-y-6">
-                    {loading ? <div className="text-gray-400 text-center py-8">Searching...</div> : renderContent()}
+                    {loading ? (
+                        <div className="text-gray-400 text-center py-8">Buscando...</div>
+                    ) : (
+                        renderContent()
+                    )}
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/tramafront.iml" filepath="$PROJECT_DIR$/.idea/tramafront.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TramaFront.iml" filepath="$PROJECT_DIR$/.idea/TramaFront.iml" />
     </modules>
   </component>
 </project>

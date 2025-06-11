@@ -2,13 +2,14 @@
 
 import { SearchBar } from "../ui/SearchBar"
 
-export function SearchSection({ searchQuery, onSearchChange, onSearchClear }) {
+export function SearchSection({ searchQuery, onInputChange, onKeyDown, onSearchClear }) {
     return (
         <div className="mb-6">
             <SearchBar
                 placeholder="Search movies, shows, people..."
                 value={searchQuery}
-                onChange={onSearchChange}
+                onChange={onInputChange}
+                onKeyDown={onKeyDown}
                 onClear={onSearchClear}
                 showClearButton={true}
             />
