@@ -5,24 +5,26 @@ import { SearchSection } from "../components/layout/SearchSection"
 import { ContentTabs } from "../components/layout/ContentTabs"
 import { MovieList } from "../components/feed/MovieList"
 import { useMovieSearch } from "../hooks/use-movie-search"
+import { useUserSearch } from "../hooks/use-user-search" // Nueva importación
+import { UserSearchResults } from "../components/feed/UserSearchResults" // Nueva importación
 
 export default function Movies() {
     const [activeTab, setActiveTab] = useState("movies")
-    const [favorites, setFavorites] = useState([])
-    const {
-        searchQuery,
-        movies,
-        loading,
-        page,
-        totalPages,
-        handleInputChange,
-        handleKeyDown,
-        handleSearchClear,
-        goToPage
-    } = useMovieSearch()
+    const [favorites, setFavorites] = useState([]) // Esto es específico para películas
+
+    // Hook para búsqueda de películas
+    const movieSearch = useMovieSearch()
+    // Hook para búsqueda de usuarios
+    const userSearch = useUserSearch()
 
     const handleTabChange = (tabId) => {
         setActiveTab(tabId)
+        // Opcional: Limpiar la búsqueda de la pestaña anterior para evitar confusiones
+        if (tabId === "movies") {
+            userSearch.handleSearchClear() // Limpia la búsqueda de usuarios y su input
+        } else if (tabId === "users") {
+            movieSearch.handleSearchClear() // Limpia la búsqueda de películas y su input
+        }
     }
 
     const toggleFavorite = (movie) => {
@@ -33,32 +35,40 @@ export default function Movies() {
         )
     }
 
+    // Determinar qué hook de búsqueda está activo
+    const currentSearchQuery = activeTab === "movies" ? movieSearch.searchQuery : userSearch.searchQuery
+    const currentHandleInputChange = activeTab === "movies" ? movieSearch.handleInputChange : userSearch.handleInputChange
+    const currentHandleKeyDown = activeTab === "movies" ? movieSearch.handleKeyDown : userSearch.handleKeyDown
+    const currentHandleSearchClear = activeTab === "movies" ? movieSearch.handleSearchClear : userSearch.handleSearchClear
+    const isLoading = activeTab === "movies" ? movieSearch.loading : userSearch.loading
+    const currentPlaceholder = activeTab === "movies" ? "Buscar películas..." : "Buscar usuarios por nombre..."
+
     const renderContent = () => {
         switch (activeTab) {
             case "movies":
                 return (
                     <>
                         <MovieList
-                            movies={movies}
+                            movies={movieSearch.movies}
                             title="Películas encontradas"
                             favorites={favorites}
                             onToggleFavorite={toggleFavorite}
                         />
-                        {movies.length > 0 && (
+                        {movieSearch.movies.length > 0 && (
                             <div className="flex justify-center items-center space-x-2 mt-4">
                                 <button
-                                    onClick={async () => await goToPage(page - 1)}
-                                    disabled={page === 1}
+                                    onClick={async () => await movieSearch.goToPage(movieSearch.page - 1)}
+                                    disabled={movieSearch.page === 1}
                                     className="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
                                 >
                                     Anterior
                                 </button>
                                 <span className="text-gray-300">
-                                    Página {page} de {totalPages}
+                                    Página {movieSearch.page} de {movieSearch.totalPages}
                                 </span>
                                 <button
-                                    onClick={async () => await goToPage(page + 1)}
-                                    disabled={page === totalPages}
+                                    onClick={async () => await movieSearch.goToPage(movieSearch.page + 1)}
+                                    disabled={movieSearch.page === movieSearch.totalPages}
                                     className="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
                                 >
                                     Siguiente
@@ -70,7 +80,16 @@ export default function Movies() {
             case "top":
                 return <div className="text-gray-400 text-center py-8">Top content coming soon...</div>
             case "users":
-                return <div className="text-gray-400 text-center py-8">Users content coming soon...</div>
+                // Renderizar resultados de búsqueda de usuarios
+                return (
+                    <>
+                        {userSearch.error && <div className="text-red-500 mt-2 text-center">{userSearch.error}</div>}
+                        {!userSearch.loading && !userSearch.error && userSearch.users.length === 0 && currentSearchQuery && (
+                            <div className="text-gray-400 text-center py-8">No se encontraron usuarios.</div>
+                        )}
+                        <UserSearchResults users={userSearch.users} onClose={userSearch.handleSearchClear} />
+                    </>
+                )
             default:
                 return null
         }
@@ -80,17 +99,20 @@ export default function Movies() {
         <div className="min-h-screen bg-gray-900">
             <div className="max-w-4xl mx-auto px-6 py-8">
                 <SearchSection
-                    searchQuery={searchQuery}
-                    onInputChange={handleInputChange}
-                    onKeyDown={handleKeyDown}
-                    onSearchClear={handleSearchClear}
+                    searchQuery={currentSearchQuery}
+                    onInputChange={currentHandleInputChange}
+                    onKeyDown={currentHandleKeyDown}
+                    onSearchClear={currentHandleSearchClear}
+                    placeholder={currentPlaceholder} // Pasar placeholder dinámico
                 />
 
                 <ContentTabs activeTab={activeTab} onTabChange={handleTabChange} />
 
                 <div className="space-y-6">
-                    {loading ? (
-                        <div className="text-gray-400 text-center py-8">Buscando...</div>
+                    {isLoading ? (
+                        <div className="text-gray-400 text-center py-8">
+                            {activeTab === "movies" ? "Buscando películas..." : "Buscando usuarios..."}
+                        </div>
                     ) : (
                         renderContent()
                     )}
