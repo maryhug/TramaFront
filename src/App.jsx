@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import Layout from "./components/layout/Layout"; // Asumo que tienes este componente
 import Settings from "./pages/Settings";
 import CommentsPage from "./pages/Comentarios";
+import { MoviePost } from "./components/feed/MoviePost";
 import { ReviewCard } from "./components/feed/ReviewCard"; // Asegúrate de que este componente exista
 
 // Nuevas importaciones

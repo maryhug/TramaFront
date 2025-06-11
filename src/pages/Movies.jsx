@@ -1,29 +1,31 @@
-"use client"
-
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { SearchSection } from "../components/layout/SearchSection"
 import { ContentTabs } from "../components/layout/ContentTabs"
 import { MovieList } from "../components/feed/MovieList"
 import { useMovieSearch } from "../hooks/use-movie-search"
-import { useUserSearch } from "../hooks/use-user-search" // Nueva importación
-import { UserSearchResults } from "../components/feed/UserSearchResults" // Nueva importación
+import { useUserSearch } from "../hooks/use-user-search"
+import { UserSearchResults } from "../components/feed/UserSearchResults"
 
 export default function Movies() {
     const [activeTab, setActiveTab] = useState("movies")
-    const [favorites, setFavorites] = useState([]) // Esto es específico para películas
+    const [favorites, setFavorites] = useState([])
 
-    // Hook para búsqueda de películas
     const movieSearch = useMovieSearch()
-    // Hook para búsqueda de usuarios
     const userSearch = useUserSearch()
+
+    // Llama a fetchPopularMovies cuando se selecciona la pestaña "top"
+    useEffect(() => {
+        if (activeTab === "top") {
+            movieSearch.fetchPopularMovies()
+        }
+    }, [activeTab])
 
     const handleTabChange = (tabId) => {
         setActiveTab(tabId)
-        // Opcional: Limpiar la búsqueda de la pestaña anterior para evitar confusiones
         if (tabId === "movies") {
-            userSearch.handleSearchClear() // Limpia la búsqueda de usuarios y su input
+            userSearch.handleSearchClear()
         } else if (tabId === "users") {
-            movieSearch.handleSearchClear() // Limpia la búsqueda de películas y su input
+            movieSearch.handleSearchClear()
         }
     }
 
@@ -35,12 +37,11 @@ export default function Movies() {
         )
     }
 
-    // Determinar qué hook de búsqueda está activo
     const currentSearchQuery = activeTab === "movies" ? movieSearch.searchQuery : userSearch.searchQuery
     const currentHandleInputChange = activeTab === "movies" ? movieSearch.handleInputChange : userSearch.handleInputChange
     const currentHandleKeyDown = activeTab === "movies" ? movieSearch.handleKeyDown : userSearch.handleKeyDown
     const currentHandleSearchClear = activeTab === "movies" ? movieSearch.handleSearchClear : userSearch.handleSearchClear
-    const isLoading = activeTab === "movies" ? movieSearch.loading : userSearch.loading
+    const isLoading = activeTab === "movies" || activeTab === "top" ? movieSearch.loading : userSearch.loading
     const currentPlaceholder = activeTab === "movies" ? "Buscar películas..." : "Buscar usuarios por nombre..."
 
     const renderContent = () => {
@@ -78,9 +79,38 @@ export default function Movies() {
                     </>
                 )
             case "top":
-                return <div className="text-gray-400 text-center py-8">Top content coming soon...</div>
+                return (
+                    <>
+                        <MovieList
+                            movies={movieSearch.movies}
+                            title="Películas populares de la semana"
+                            favorites={favorites}
+                            onToggleFavorite={toggleFavorite}
+                        />
+                        {movieSearch.movies.length > 0 && (
+                            <div className="flex justify-center items-center space-x-2 mt-4">
+                                <button
+                                    onClick={async () => await movieSearch.goToPage(movieSearch.page - 1)}
+                                    disabled={movieSearch.page === 1}
+                                    className="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
+                                >
+                                    Anterior
+                                </button>
+                                <span className="text-gray-300">
+                                    Página {movieSearch.page} de {movieSearch.totalPages}
+                                </span>
+                                <button
+                                    onClick={async () => await movieSearch.goToPage(movieSearch.page + 1)}
+                                    disabled={movieSearch.page === movieSearch.totalPages}
+                                    className="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
+                                >
+                                    Siguiente
+                                </button>
+                            </div>
+                        )}
+                    </>
+                )
             case "users":
-                // Renderizar resultados de búsqueda de usuarios
                 return (
                     <>
                         {userSearch.error && <div className="text-red-500 mt-2 text-center">{userSearch.error}</div>}
@@ -103,7 +133,7 @@ export default function Movies() {
                     onInputChange={currentHandleInputChange}
                     onKeyDown={currentHandleKeyDown}
                     onSearchClear={currentHandleSearchClear}
-                    placeholder={currentPlaceholder} // Pasar placeholder dinámico
+                    placeholder={currentPlaceholder}
                 />
 
                 <ContentTabs activeTab={activeTab} onTabChange={handleTabChange} />
@@ -111,7 +141,9 @@ export default function Movies() {
                 <div className="space-y-6">
                     {isLoading ? (
                         <div className="text-gray-400 text-center py-8">
-                            {activeTab === "movies" ? "Buscando películas..." : "Buscando usuarios..."}
+                            {activeTab === "movies" || activeTab === "top"
+                                ? "Buscando películas..."
+                                : "Buscando usuarios..."}
                         </div>
                     ) : (
                         renderContent()

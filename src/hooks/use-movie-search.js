@@ -92,6 +92,35 @@ export function useMovieSearch() {
             }))
         )
     }
+    const fetchPopularMovies = async () => {
+        setLoading(true)
+        try {
+            const response = await axios.get(`${API_BASE_URL}/movies/popular/week`)
+            const results = Array.isArray(response.data)
+                ? response.data
+                : (response.data.results || [])
+            allResultsRef.current = results
+            const total = results.length
+            setTotalPages(Math.max(1, Math.ceil(total / PAGE_SIZE)))
+            setPage(1)
+            setMovies(
+                results.slice(0, PAGE_SIZE).map(movie => ({
+                    id: movie.id,
+                    title: movie.title,
+                    director: movie.director || "Desconocido",
+                    releaseDate: movie.releaseDate || "N/A",
+                    posterUrl: movie.posterUrl || ""
+                }))
+            )
+        } catch {
+            setMovies([])
+            setTotalPages(1)
+            setPage(1)
+            allResultsRef.current = []
+        } finally {
+            setLoading(false)
+        }
+    }
 
     return {
         searchQuery,
@@ -102,6 +131,7 @@ export function useMovieSearch() {
         handleInputChange,
         handleKeyDown,
         handleSearchClear,
-        goToPage
+        goToPage,
+        fetchPopularMovies // <-- agrega esto
     }
 }
