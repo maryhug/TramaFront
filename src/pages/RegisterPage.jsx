@@ -36,49 +36,6 @@ export default function RegisterPage() {
     };
 
     return (
-        // <div className="bg-gray-900 min-h-screen"style={{ padding: '20px', maxWidth: '400px', margin: 'auto', color: 'white' }}>
-        //     <h2>Registro</h2>
-        //     <form onSubmit={handleRegister}>
-        //         <div>
-        //             <label htmlFor="name">Nombre:</label>
-        //             <input
-        //                 type="text"
-        //                 id="name"
-        //                 value={name}
-        //                 onChange={(e) => setName(e.target.value)}
-        //                 required
-        //                 style={{ width: '100%', padding: '8px', margin: '8px 0', color: 'black' }}
-        //             />
-        //         </div>
-        //         <div>
-        //             <label htmlFor="email">Email:</label>
-        //             <input
-        //                 type="email"
-        //                 id="email"
-        //                 value={email}
-        //                 onChange={(e) => setEmail(e.target.value)}
-        //                 required
-        //                 style={{ width: '100%', padding: '8px', margin: '8px 0', color: 'black' }}
-        //             />
-        //         </div>
-        //         <div>
-        //             <label htmlFor="password">Contraseña:</label>
-        //             <input
-        //                 type="password"
-        //                 id="password"
-        //                 value={password}
-        //                 onChange={(e) => setPassword(e.target.value)}
-        //                 required
-        //                 style={{ width: '100%', padding: '8px', margin: '8px 0', color: 'black' }}
-        //             />
-        //         </div>
-        //         <button type="submit" disabled={loading} style={{ padding: '10px 15px', cursor: 'pointer' }}>
-        //             {loading ? 'Registrando...' : 'Registrar'}
-        //         </button>
-        //     </form>
-        //     {message && <p style={{ color: message.startsWith('¡Registro exitoso!') ? 'green' : 'red' }}>{message}</p>}
-        // </div>
-
         <div className="bg-gray-900 min-h-screen flex items-center justify-center">
             <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
                 <h2 className="text-2xl font-bold text-white mb-6 text-center">Registro</h2>

@@ -18,8 +18,8 @@ export default function LoginPage() {
 
         try {
             await authService.login(email, password);
-            navigate('/'); // Redirige a la página de inicio
-            window.location.reload(); // Recarga para que App.jsx actualice el estado del usuario
+            navigate('/');
+            window.location.reload();
         } catch (error) {
             const resMessage =
                 (error.response &&
