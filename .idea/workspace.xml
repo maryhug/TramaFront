@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Listar películas en busqueda">
-      <change afterPath="$PROJECT_DIR$/src/pages/LoginPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/RegisterPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/authService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+    <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Add authentication pages and update routing for user login and registration">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/authService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +80,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749621236692</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add authentication pages and update routing for user login and registration">
+      <option name="closed" value="true" />
+      <created>1749622100519</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749622100519</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +96,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Listar películas en busqueda" />
-    <option name="LAST_COMMIT_MESSAGE" value="Listar películas en busqueda" />
+    <MESSAGE value="Add authentication pages and update routing for user login and registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add authentication pages and update routing for user login and registration" />
   </component>
 </project>
