@@ -1,7 +1,7 @@
 import { useState, useRef } from "react"
 import axios from "axios"
 
-const API_BASE_URL = "https://tramaback-api.up.railway.app/trama"
+const API_BASE_URL = "https://tramaback-api.up.railway.app"
 const PAGE_SIZE = 10
 
 export function useMovieSearch() {

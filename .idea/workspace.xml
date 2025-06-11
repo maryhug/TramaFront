@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Fix API URL in authService and update last commit message in workspace.xml">
+    <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Update API base URL for movie search and modify workspace.xml commit message">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/use-movie-search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-movie-search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749624134432</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update API base URL for movie search and modify workspace.xml commit message">
+      <option name="closed" value="true" />
+      <created>1749624266814</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1749624266814</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +123,7 @@
     <MESSAGE value="Add authentication pages and update routing for user login and registration" />
     <MESSAGE value="Add authService for user registration, login, and logout functionality" />
     <MESSAGE value="Fix API URL in authService and update last commit message in workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix API URL in authService and update last commit message in workspace.xml" />
+    <MESSAGE value="Update API base URL for movie search and modify workspace.xml commit message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update API base URL for movie search and modify workspace.xml commit message" />
   </component>
 </project>
