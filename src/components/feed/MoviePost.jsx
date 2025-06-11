@@ -1,29 +1,7 @@
 import { Avatar } from "../ui/Avatar"
 import { StarRating } from "../ui/StarRating"
-import { Link } from "react-router-dom"
 
-// interface MoviePostProps {
-//     user: {
-//         name: string
-//         avatar: string
-//         timeAgo: string
-//     }
-//     movie: {
-//         title: string
-//         year: number
-//         rating: number
-//         poster?: string
-//     }
-//     review: string
-//     votes: {
-//         up: number
-//         down: number
-//     }
-//     comments: number
-//     className?: string
-// }
-
-export function MoviePost({ user, movie, review, votes, comments, className = "" }) {
+export function MoviePost({ user, movie, review, votes, comments, bookmarks, className = "" }) {
     return (
         <article className={`bg-gray-800 rounded-lg border border-gray-800 p-6 ${className}`}>
             {/* Header */}
@@ -66,7 +44,7 @@ export function MoviePost({ user, movie, review, votes, comments, className = ""
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                    <span className="text-sm">{review.likes}</span>
+                    <span className="text-sm">{votes.up}</span>
                 </button>
 
                 {/* Comment */}
@@ -75,7 +53,7 @@ export function MoviePost({ user, movie, review, votes, comments, className = ""
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                               d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
-                    <span className="text-sm">{review.comments}</span>
+                    <span className="text-sm">{comments}</span>
                 </button>
 
                 {/* Bookmark */}
@@ -84,7 +62,7 @@ export function MoviePost({ user, movie, review, votes, comments, className = ""
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                               d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                     </svg>
-                    <span className="text-sm">{review.bookmarks}</span>
+                    <span className="text-sm">{bookmarks}</span>
                 </button>
 
                 <button className="p-1 hover:bg-gray-100 rounded">

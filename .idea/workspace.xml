@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baf981fa-36dd-4fca-8d76-ab31e7e8e1fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TramaFront.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-followers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/feed/ReviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/feed/ReviewCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/use-movie-search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-movie-search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Movies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Movies.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile.jsx" afterDir="false" />
+    <list default="true" id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="Add authentication pages and update routing for user login and registration">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,22 +22,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Danieloid3"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Danieloid3&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/maryhug/TramaFront.git",
-    "accountId": "e2fefdc5-6f62-44a9-9c4b-b82131921586"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/maryhug/TramaFront.git&quot;,
+    &quot;accountId&quot;: &quot;e2fefdc5-6f62-44a9-9c4b-b82131921586&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
-  <component name="ProjectId" id="2yNb35AxNAksVEJ8dgRQM6iLi7r" />
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2yLUYyri3R54eLD3AzWOXfIB3tJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -53,19 +48,25 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.ListsList.jsx.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/123/IdeaProjects/TramaFront",
+    "last_opened_file_path": "C:/Users/maryh/IdeaProjects/TramaFront",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lotus\IdeaProjects\TramaFront" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -76,16 +77,41 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="baf981fa-36dd-4fca-8d76-ab31e7e8e1fb" name="Changes" comment="" />
-      <created>1749677775969</created>
+      <changelist id="8bf77889-3616-4ab8-927e-03ce3239751f" name="Changes" comment="" />
+      <created>1749613398959</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1749677775969</updated>
-      <workItem from="1749677778123" duration="1638000" />
+      <updated>1749613398959</updated>
+      <workItem from="1749613400432" duration="1131000" />
+      <workItem from="1749614571624" duration="6614000" />
+      <workItem from="1749658535316" duration="6498000" />
     </task>
+    <task id="LOCAL-00001" summary="Listar películas en busqueda">
+      <option name="closed" value="true" />
+      <created>1749621236692</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749621236692</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add authentication pages and update routing for user login and registration">
+      <option name="closed" value="true" />
+      <created>1749622100519</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749622100519</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Listar películas en busqueda" />
+    <MESSAGE value="Add authentication pages and update routing for user login and registration" />
+    <MESSAGE value="Refactor movie post components to integrate review functionality and update routing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor movie post components to integrate review functionality and update routing" />
   </component>
 </project>

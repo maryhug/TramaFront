@@ -17,3 +17,4 @@ export function Avatar({ src, alt = "Avatar", size = "md", className = "" }) {
         </div>
     )
 }
+
