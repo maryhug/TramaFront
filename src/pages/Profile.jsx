@@ -9,28 +9,24 @@ import { LikesList } from "../components/feed/LikesList";
 import { FollowersList } from "../components/feed/FollowersList";
 import { FollowingList } from "../components/feed/FollowingList";
 
-export default function Profile() {
+export default function Profile({ currentUser }) {
     const { userId: routeUserId } = useParams();
     const [activeTab, setActiveTab] = useState("reviews");
     const [reviews, setReviews] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // Si hay userId en la ruta, úsalo; si no, usa el del localStorage (perfil propio)
-    const userId = routeUserId || localStorage.getItem("userId");
-    const userObj = JSON.parse(localStorage.getItem("user"));
-    const token = userObj?.token;
-
-    const tabs = [
-        { id: "reviews", label: "Reviews" },
-        { id: "lists", label: "Lists" },
-        { id: "likes", label: "Likes" },
-        { id: "followers", label: "Followers" },
-        { id: "following", label: "Following" },
-    ];
+    const token = currentUser?.token;
+    const currentUserId = currentUser?.id || currentUser?._id;
+    const profileUserId = routeUserId || currentUserId;
 
     useEffect(() => {
-        if (!userId || !token) return;
+        if (!profileUserId || !token) {
+            setLoading(false);
+            return;
+        }
         if (activeTab === "reviews") {
-            axios.get(`https://tramaback-api.up.railway.app/trama/reviews/user/${userId}`, {
+            setLoading(true);
+            axios.get(`https://tramaback-api.up.railway.app/trama/reviews/user/${profileUserId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             })
                 .then(res => {
@@ -52,39 +48,53 @@ export default function Profile() {
                         }))
                     );
                 })
-                .catch(() => setReviews([]));
+                .catch(() => setReviews([]))
+                .finally(() => setLoading(false));
         }
-        // Los otros tabs cargan sus datos en sus propios componentes
-    }, [userId, token, activeTab]);
+    }, [profileUserId, token, activeTab]);
+
+    const tabs = [
+        { id: "reviews", label: "Reviews" },
+        { id: "lists", label: "Lists" },
+        { id: "likes", label: "Likes" },
+        { id: "followers", label: "Followers" },
+        { id: "following", label: "Following" },
+    ];
+
+    if (!currentUser) {
+        return <div className="text-gray-400 text-center py-8">Cargando perfil...</div>;
+    }
+
+    if (!token) {
+        return <div className="text-gray-400 text-center py-8">Debes iniciar sesión para ver el perfil.</div>;
+    }
+
+    if (!profileUserId) {
+        return <div className="text-red-500 text-center py-8">Perfil no encontrado.</div>;
+    }
 
     const renderTabContent = () => {
         switch (activeTab) {
             case "reviews":
-                return <ReviewsList reviews={reviews} />;
+                return loading
+                    ? <div className="text-gray-400 text-center py-8">Cargando...</div>
+                    : <ReviewsList reviews={reviews} />;
             case "lists":
-                return <ListsList userId={userId} />;
+                return <ListsList userId={profileUserId} />;
             case "likes":
-                return <LikesList userId={userId} />;
+                return <LikesList userId={profileUserId} />;
             case "followers":
-                return <FollowersList userId={userId} />;
+                return <FollowersList userId={profileUserId} />;
             case "following":
-                return <FollowingList userId={userId} />;
+                return <FollowingList userId={profileUserId} />;
             default:
                 return <ReviewsList reviews={reviews} />;
         }
     };
 
-    if (!userId) {
-        return <div className="text-gray-400 text-center py-8">Debes iniciar sesión para ver el perfil.</div>;
-    }
-
-    if (!token && userId) {
-        return <div className="text-red-500 text-center py-8">Error de autenticación. Por favor, inicia sesión de nuevo.</div>;
-    }
-
     return (
         <div className="min-h-screen bg-gray-900">
-            <ProfileHeader userId={userId} />
+            <ProfileHeader userId={profileUserId} />
             <TabNavigation tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
             <div className="bg-gray-900 py-4">
                 {renderTabContent()}

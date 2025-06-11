@@ -22,7 +22,18 @@ export function ProfileDropdown() {
     }, [])
 
     const handleProfileClick = () => {
-        navigate("/profile")
+        const userObj = JSON.parse(localStorage.getItem("user"))
+        // El id puede estar en userObj.id, userObj._id o userObj.user.id/_id
+        const userId =
+            userObj?.id ||
+            userObj?._id ||
+            userObj?.user?.id ||
+            userObj?.user?._id
+        if (userId) {
+            navigate(`/profile/${userId}`)
+        } else {
+            navigate("/profile")
+        }
     }
 
     const handleSettingsClick = () => {

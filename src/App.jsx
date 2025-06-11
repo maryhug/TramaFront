@@ -7,47 +7,42 @@ import MyListsPage from "./pages/My-List";
 import Buscar from "./pages/Movies";
 import Review from "./pages/Review";
 import Profile from "./pages/Profile";
-import Layout from "./components/layout/Layout"; // Asumo que tienes este componente
+import Layout from "./components/layout/Layout";
 import Settings from "./pages/Settings";
 import CommentsPage from "./pages/Comentarios";
 import { MoviePost } from "./components/feed/MoviePost";
-import { ReviewCard } from "./components/feed/ReviewCard"; // Asegúrate de que este componente exista
-
-// Nuevas importaciones
+import { ReviewCard } from "./components/feed/ReviewCard";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import authService from "./services/authService";
 
 function AppContent() {
     const [currentUser, setCurrentUser] = useState(undefined);
-    const navigate = useNavigate(); // Hook para navegación programática
+    const [loadingUser, setLoadingUser] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const user = authService.getCurrentUser();
-        if (user) {
-            setCurrentUser(user);
-        }
+        setCurrentUser(user);
+        setLoadingUser(false);
     }, []);
 
     const handleLogout = () => {
         authService.logout();
         setCurrentUser(null);
-        navigate('/login'); // Redirige a login después de cerrar sesión
-        window.location.reload(); // Opcional, para asegurar limpieza de estado
+        navigate('/login');
     };
 
-    // Pasa currentUser y handleLogout al Layout si es necesario
-    // para mostrar/ocultar elementos o añadir un botón de logout.
-    // Ejemplo: <Layout activeNavItem="home" currentUser={currentUser} onLogout={handleLogout}>
+    if (loadingUser) {
+        return <div style={{ color: "white", textAlign: "center", marginTop: 40 }}>Cargando...</div>;
+    }
 
     return (
         <div className="App">
             <Routes>
-                {/* Rutas de autenticación (sin el Layout principal si no es necesario) */}
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
 
-                {/* Rutas protegidas o que usan el Layout principal */}
                 <Route
                     path="/"
                     element={
@@ -88,29 +83,38 @@ function AppContent() {
                         </Layout>
                     }
                 />
+                {/* Rutas para perfil */}
                 <Route
                     path="/profile"
                     element={
-                        // Solo permite acceso a /profile si hay un usuario logueado
                         currentUser ? (
                             <Layout activeNavItem="profile" currentUser={currentUser} onLogout={handleLogout}>
-                                <Profile />
+                                <Profile currentUser={currentUser} />
                             </Layout>
                         ) : (
-                            <LoginPage /> // O redirige a login
+                            <LoginPage />
+                        )
+                    }
+                />
+                <Route
+                    path="/profile/:userId"
+                    element={
+                        currentUser ? (
+                            <Layout activeNavItem="profile" currentUser={currentUser} onLogout={handleLogout}>
+                                <Profile currentUser={currentUser} />
+                            </Layout>
+                        ) : (
+                            <LoginPage />
                         )
                     }
                 />
                 <Route
                     path="/settings"
                     element={
-                         currentUser ? (
-                            // Settings podría necesitar Layout o ser diferente
-                            // Aquí asumimos que Settings también usa el Layout principal
+                        currentUser ? (
                             <Layout activeNavItem="settings" currentUser={currentUser} onLogout={handleLogout}>
-                                 <Settings />
+                                <Settings />
                             </Layout>
-                           
                         ) : (
                             <LoginPage />
                         )
@@ -132,10 +136,8 @@ function AppContent() {
                         </Layout>
                     }
                 />
-
-
-                {/* Puedes añadir una ruta para manejar páginas no encontradas */}
-                {/* <Route path="*" element={<NotFoundPage />} /> */}
+                {/* Ruta para página no encontrada */}
+                <Route path="*" element={<div style={{ color: "white", textAlign: "center", marginTop: 40 }}>Página no encontrada</div>} />
             </Routes>
         </div>
     );
