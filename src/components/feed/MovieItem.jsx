@@ -6,9 +6,9 @@ export function MovieItem({ movie }) {
         <div className="flex items-center justify-between gap-6 py-6 border-b border-b-amber-50 last:border-b-0">
             {/* Contenido del texto */}
             <div className="flex-1">
-                <div className="text-gray-400 text-sm mb-1">{movie.year}</div>
+                <div className="text-white text-sm mb-1">{movie.year}</div>
                 <h3 className="text-white text-lg font-medium mb-1">{movie.title}</h3>
-                <div className="text-gray-400 text-sm mb-3">
+                <div className="text-white text-sm mb-3">
                     {movie.genre} • {movie.duration}
                 </div>
                 <Link to="/review">

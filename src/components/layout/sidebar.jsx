@@ -1,4 +1,4 @@
-import { HomeIcon, SearchIcon, BellIcon, MailIcon, UserIcon, DotsIcon } from "../icons/Icons"
+import { HomeIcon, UserIcon, DotsIcon } from "../icons/Icons"
 
 const navigationItems = [
     { id: "home", label: "Home", icon: HomeIcon, href: "/" },

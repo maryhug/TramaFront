@@ -26,13 +26,13 @@ import { Link } from "react-router-dom"
 
 export function MoviePost({ user, movie, review, votes, comments, className = "" }) {
     return (
-        <article className={`bg-gray-800 rounded-lg border border-gray-600 p-6 ${className}`}>
+        <article className={`bg-gray-800 rounded-lg border border-gray-800 p-6 ${className}`}>
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                     <Avatar src={user.avatar} alt={user.name} />
                     <div>
-                        <h3 className="font-semibold text-gray-900">{user.name}</h3>
+                        <h3 className="font-semibold text-white">{user.name}</h3>
                         <p className="text-sm text-gray-500">{user.timeAgo}</p>
                     </div>
                 </div>
@@ -41,12 +41,12 @@ export function MoviePost({ user, movie, review, votes, comments, className = ""
             {/* Movie Info */}
             <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
-                    <h2 className="text-lg font-semibold text-black">
+                    <h2 className="text-lg font-semibold text-white">
                         {movie.title} ({movie.year})
                     </h2>
                     <StarRating rating={movie.rating} />
                 </div>
-                <p className="text-black text-sm leading-relaxed">{review}</p>
+                <p className="text-white text-sm leading-relaxed">{review}</p>
             </div>
 
             {/* Movie Poster */}
